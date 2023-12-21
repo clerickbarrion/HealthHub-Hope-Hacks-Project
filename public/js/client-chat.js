@@ -5,29 +5,41 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const socket = io()
     const chatBox = document.getElementById('chat-box')
     chatBox.innerHTML = `
-        <div id="messages">
+        <button>Chat</button>
+        <div id='chat-container'>
+            <div id="messages">
 
+            </div>
+            <small></small>
+            <form id="input-box" action="">
+                <textarea placeholder='Write a message'></textarea>
+            </form>
         </div>
-        <small></small>
-        <form id="input-box" action="">
-            <textarea></textarea>
-            <button>Send</button>
-        </form>
     `
-    const form = chatBox.querySelector('form')
+    const openChatBtn = chatBox.querySelector('button')
+    const chatContainer = chatBox.querySelector('#chat-container')
     const input = chatBox.querySelector('textarea')
     const messages = chatBox.querySelector('#messages')
     const typing = chatBox.querySelector('small')
-    form.addEventListener('submit', e=>{
-        e.preventDefault()
-        if (input.value){
-            socket.emit('chat message',input.value);
+    let cooldown = true
+    
+
+    openChatBtn.addEventListener('click', ()=>{
+        if (chatContainer.style.display === 'none'){
+            chatContainer.style.display = 'block'
+            socket.emit('join')
+        }else{chatContainer.style.display = 'none'}
+    })
+
+    input.addEventListener('keydown', e=>{
+        if (e.key === 'Enter' && input.value ){ 
+            socket.emit('chat message',input.value)
             input.value= ''
+            input.blur()
         }
     })
-    input.addEventListener('input', ()=>{
-        socket.emit('typing', "User is typing...")
-    })
+
+    input.addEventListener('input', () => socket.emit('typing'))
 
     socket.on('typing', typers=>{
         if (typers.length > 3) {typing.textContent = 'Several people are typing...'; cooldown = true}
@@ -39,22 +51,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 cooldown = true
             }else{
                 cooldown = false
-                time.clearTimeout()
-            }}, 1000)
+                try{time.clearTimeout()} 
+                catch {}
+            }}, 2000)
     })
     socket.on('chat message', msg=>{
         const p = document.createElement('p')
         p.textContent = msg
         messages.appendChild(p)
+        messages.scrollTop += 1000
     })
     socket.on('join', msg=>{
         const p = document.createElement('p')
         p.textContent = msg
+        p.style.color = 'green'
         messages.appendChild(p)
+        messages.scrollTop += 1000
     })
     socket.on('leave', msg=>{
         const p = document.createElement('p')
         p.textContent = msg
+        p.style.color = 'red'
         messages.appendChild(p)
+        messages.scrollTop += 1000
     })
 })

@@ -1,0 +1,234 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html, body {
+  height: 100%;
+}
+
+#chat-box {
+  position: fixed;
+  bottom: 0;
+  width: 30%;
+  left: 69.6%;
+  border: 1px solid black;
+  box-shadow: rgb(51, 51, 51) 5px 0px 15px, rgb(51, 51, 51) -5px 0px 15px;
+}
+#chat-box button {
+  width: 100%;
+  font-size: 2rem;
+  margin: auto;
+  background-color: navy;
+  color: white;
+}
+#chat-box #chat-container {
+  display: none;
+}
+#chat-box #chat-container #messages {
+  max-height: 50vh;
+  overflow: scroll;
+}
+#chat-box #chat-container form {
+  display: flex;
+}
+#chat-box #chat-container form textarea {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
