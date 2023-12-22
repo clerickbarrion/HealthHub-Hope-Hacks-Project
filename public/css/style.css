@@ -218,6 +218,7 @@ html, body {
   margin: auto;
   background-color: navy;
   color: white;
+  cursor:pointer;
 }
 #chat-box #chat-container {
   display: none;
@@ -225,6 +226,7 @@ html, body {
 #chat-box #chat-container #messages {
   max-height: 50vh;
   overflow: scroll;
+  background-color: white;
 }
 #chat-box #chat-container form {
   display: flex;
