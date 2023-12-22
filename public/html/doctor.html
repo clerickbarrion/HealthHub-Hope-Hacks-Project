@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Doctor</title>
-    <link href="style.css" rel="stylesheet">
-    <link href="doctor.css" rel="stylesheet">
-
+    <link href="/public/css/style.css" rel="stylesheet">
+    <link href="/public/css/doctor.css" rel="stylesheet">
+<!-- copy from here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- to here -->
 
-<!-- Compiled and minified JavaScript -->
 
         
 
@@ -20,25 +19,25 @@
 <header>
 
   <nav>
-    <div class="nav-wrapper" indigo>
-      <a href="#!" class="brand-logo">Logo</a>
+    <div class="nav-wrapper blue darken-1" >
+      <a href="/public/index.html" class="brand-logo">HealthHub+</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Symptom Checker</a></li>
-        <li><a href="badges.html">Remedies</a></li>
-        <li><a href="collapsible.html">Mental Health</a></li>
-        <li><a href="mobile.html">Find a Doctor</a></li>
-        <li><a href="mobile.html"  class="waves-effect waves-light btn">Log In</a></li>
+        <li><a href="/public/html/symptoms.html">Symptom Checker</a></li>
+        <li><a href="/public/html/remedies.html">Remedies</a></li>
+        <li><a href="/public/html/mentalHealth.html">Mental Health</a></li>
+        <li><a href="/public/html/doctor.html">Find a Doctor</a></li>
+        <li><a href="/public/html/logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Symptom Checker</a></li>
-    <li><a href="badges.html">Remedies</a></li>
-    <li><a href="collapsible.html">Mental Health</a></li>
-    <li><a href="mobile.html">Find a Doctor</a></li>
-    <li><a href="mobile.html">Log In</a></li>
+    <li><a href="/public/html/symptoms.html">Symptom Checker</a></li>
+    <li><a href="/public/html/remedies.html">Remedies</a></li>
+    <li><a href="/public/html/mentalHealth.html">Mental Health</a></li>
+    <li><a href="/public/html/doctor.html">Find a Doctor</a></li>
+    <li><a href="/public/html/logIn.html">Log In</a></li>
   </ul>
 
   </header>
@@ -47,24 +46,38 @@
      <h1>Find a doctor near you</h1>
 </main>
 
-     <footer class="page-footer" class="card-panel teal lighten-2">
+     <footer class="page-footer card-panel blue darken-1">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
+              <h5 class="white-text">Contact</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Info@HealthHub.org</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Charlotte, NC</a></li>
               <h5 class="white-text">Disclaimer</h5>
-              <p class="grey-text text-lighten-4">The information provided on this medical advice website is intended for general informational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. 
-                We are not licensed medical professionals, and the content presented here is based on general knowledge and research up to our knowledge cutoff date in January 2024. 
-                It is crucial to consult with a qualified healthcare professional for personalized advice regarding your specific health condition. 
+              <p class="grey-text text-lighten-4">The information provided is intended for general informational purposes only and should not be considered professional medical advice, diagnosis, or treatment. 
+                HealthHub+ is not a licensed medical professional. Please consult a qualified healthcare professional for advice regarding your specific health condition. 
                 In case of a medical emergency, please call 911 or your local emergency services immediately.</p>
+                
             </div>
             <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Resources</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+             
+ <div class="info_form ">
+          <h5>
+            Newsletter
+          </h5>
+          <form action="#">
+            <input type="email" placeholder="Enter your email">
+            <button>
+              Subscribe
+            </button>
+          </form>
+        </div>
+                <h5 class="white-text">Resources</h5>
+                <li><a class="grey-text text-lighten-3" href="https://www.mayoclinic.org/">Mayo Clinic</a></li>
                 <li><a class="grey-text text-lighten-3" href="https://www.cdc.gov/index.htm">CDC Official Website</a></li>
                 <li><a class="grey-text text-lighten-3" href="https://988lifeline.org/">Suicide Prevention Hotline</a></li>
-
-                <li><a class="grey-text text-lighten-3" href="#!">h</a></li>
+           
               </ul>
             </div>
 
@@ -72,15 +85,17 @@
           </div>
         </div>
         <div class="footer-copyright">
-          <div class="container">
+          <div class="container center-align">
           © 2024 HealthHub Copyright
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          
           </div>
         </div>
       </footer>
+      <script type="text/javascript" src="/public/js/doctor.js"></script>
+      <!-- copy from here -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script type="text" src="js/materialize.min.js"></script> 
-          <script type="text/javascript" src="doctor.js"></script>
      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+     <!-- to here -->
 </body>
 </html> 
