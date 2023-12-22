@@ -28,8 +28,8 @@ function connectChat(server) {
             io.emit('typing', typers)
             let time = setTimeout(()=>{
                 if (!cooldown){
-                    typers = typers.filter(typer => typer != user)
                     cooldown = true
+                    typers = typers.filter(typer => typer != user)
                 }else{
                     cooldown = false
                     try{time.clearTimeout()} 
