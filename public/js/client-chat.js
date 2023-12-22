@@ -41,10 +41,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     input.addEventListener('input', () => socket.emit('typing'))
 
+    socket.emit('get user', localStorage.getItem('username'))
+
     socket.on('typing', typers=>{
-        if (typers.length > 3) {typing.textContent = 'Several people are typing...'; cooldown = true}
-        else if (typers.length = 1) {typing.textContent = `${typers[0]} is typing...`; cooldown = true}
-        else if (typers.length <= 2) {typing.textContent = `${typers[0]} and ${typers[1]} are typing...`; cooldown = true}
+        switch(typers.length){
+            case 1:
+                typing.textContent = `${typers[0]} is typing...`; cooldown = true
+                break;
+            case 2:
+                typing.textContent = `${typers[0]} and ${typers[1]} are typing...`; cooldown = true
+                break;
+            default:
+                typing.textContent = 'Several people are typing...'; cooldown = true
+        }        
+        
         let time = setTimeout(()=>{
             if (!cooldown){
                 typing.textContent = ''
@@ -53,24 +63,30 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 cooldown = false
                 try{time.clearTimeout()} 
                 catch {}
-            }}, 2000)
+            }}, 3000)
     })
     socket.on('chat message', msg=>{
         const p = document.createElement('p')
-        p.textContent = msg
+        p.innerHTML = msg
+        p.querySelector('mark').style.color = '#'+localStorage.getItem('hex')
+        p.querySelector('mark').style.backgroundColor = 'initial'
         messages.appendChild(p)
         messages.scrollTop += 1000
     })
     socket.on('join', msg=>{
         const p = document.createElement('p')
-        p.textContent = msg
+        p.innerHTML = msg
+        p.querySelector('mark').style.color = '#'+localStorage.getItem('hex')
+        p.querySelector('mark').style.backgroundColor = 'initial'
         p.style.color = 'green'
         messages.appendChild(p)
         messages.scrollTop += 1000
     })
     socket.on('leave', msg=>{
         const p = document.createElement('p')
-        p.textContent = msg
+        p.innerHTML = msg
+        p.querySelector('mark').style.color = '#'+localStorage.getItem('hex')
+        p.querySelector('mark').style.backgroundColor = 'initial'
         p.style.color = 'red'
         messages.appendChild(p)
         messages.scrollTop += 1000

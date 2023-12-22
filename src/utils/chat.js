@@ -6,25 +6,35 @@ function connectChat(server) {
     const io = socketIO(server)
     let typers = []
     io.on('connection', socket=>{
-        const user = `User ${socket.id.substring(0,5)}`
-        // io.emit('join', `${user} has entered the chat`)
+        let user
+        let cooldown = true
+
+        socket.on('get user', name=>{name ? user = name : user = `Anon ${socket.id.substring(0,5)}`})
 
         socket.on('chat message', msg=>{
-            io.emit('chat message', `${user}: ${msg}`)
+            io.emit('chat message', `<mark>${user}:</mark> ${msg}`)
         })
 
         socket.on('disconnect',()=>{
-            io.emit('leave', `${user} has left the chat`)
+            io.emit('leave', `<mark>${user}</mark> has left the chat`)
         })
 
         socket.on('join', ()=>{
-            io.emit('join', `${user} has entered the chat`)
+            io.emit('join', `<mark>${user}</mark> has entered the chat`)
         })
 
         socket.on('typing',()=>{
             if (!typers.includes(user)) {typers.push(user)}
             io.emit('typing', typers)
-            typers = typers.filter(typer => typer != user)
+            let time = setTimeout(()=>{
+                if (!cooldown){
+                    typers = typers.filter(typer => typer != user)
+                    cooldown = true
+                }else{
+                    cooldown = false
+                    try{time.clearTimeout()} 
+                    catch {}
+                }}, 3000)
         })
     })
 }

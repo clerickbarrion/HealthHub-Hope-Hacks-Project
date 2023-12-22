@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/logIn.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
@@ -14,51 +13,29 @@
 
         <nav>
           <div class="nav-wrapper blue darken-1" >
-            <a href="/public/index.html" class="brand-logo">HealthHub+</a>
+            <a href="../index.html" class="brand-logo">HealthHub+</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li><a href="symptoms.html">Symptom Checker</a></li>
               <li><a href="remedies.html">Remedies</a></li>
               <li><a href="mentalHealth.html">Mental Health</a></li>
               <li><a href="doctor.html">Find a Doctor</a></li>
-              <li><a href="logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
+              <li><a href="logIn.html"  class="waves-effect waves-light btn">Logout</a></li>
             </ul>
           </div>
         </nav>
       
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="/public/html/symptoms.html">Symptom Checker</a></li>
-          <li><a href="/public/html/remedies.html">Remedies</a></li>
-          <li><a href="/public/html/mentalHealth.html">Mental Health</a></li>
-          <li><a href="/public/html/doctor.html">Find a Doctor</a></li>
-          <li><a href="/public/html/logIn.html">Log In</a></li>
+          <li><a href="symptoms.html">Symptom Checker</a></li>
+          <li><a href="remedies.html">Remedies</a></li>
+          <li><a href="mentalHealth.html">Mental Health</a></li>
+          <li><a href="doctor.html">Find a Doctor</a></li>
+          <li><a href="logIn.html">Logout</a></li>
         </ul>
       
     </header>
     <main>
-        <section>
-            <h1>Your HealthHub</h1>
-            <div>
-                <button id="login-switch">Login</button>
-                <button id="signup-switch">Sign Up</button>
-            </div>
-            <p id="error-message"></p>
-            <div id="login-section">
-                <input placeholder="Username" id="login-username">
-                <input placeholder="Password" id="login-password" type="password">
-                <small>Forgot password?</small>
-                <button>Login</button>
-                <p>Create an account <mark>Sign up now</mark></p>
-            </div>
-            <div id="signup-section">
-                <input placeholder="Username: max 20 chars, alphanumeric" id="signup-username">
-                <input placeholder="Password: min 6 chars" id="signup-password" type="password">
-                <input placeholder="Confirm Password" id="confirm-password" type="password">
-                <input placeholder="Security Question: What is your middle name?" id="middlename">
-                <button>Sign Up</button>
-                <p>Already have an account? <mark>Login</mark></p>
-            </div>
-        </section>
+        <h1 id="greeting"></h1>
     </main>
     <footer class="page-footer card-panel blue darken-1">
         <div class="container">
@@ -108,7 +85,7 @@
     <div id="chat-box"></div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="../js/client-chat.js"></script>
-    <script src="../js/logIn.js"></script>
+    <script src="../js/account.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text" src="../css/materialize-css/dist/js/materialize.min.js"></script> 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
