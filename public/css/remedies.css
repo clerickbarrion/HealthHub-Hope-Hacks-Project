@@ -1,0 +1,33 @@
+#best-health {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: black;
+}
+
+#tips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(219, 224, 228, 0.935);
+    padding-bottom: 40px;
+
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+#carousel1,
+#carousel2,
+#carousel3 {
+    width: 600px;
+    height: auto;
+}
