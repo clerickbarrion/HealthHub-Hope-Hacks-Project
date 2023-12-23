@@ -16,6 +16,11 @@ class AccountHandler {
         this.signupPassword = document.getElementById('signup-password')
         this.confirmPassword = document.getElementById('confirm-password')
         this.middlename = document.getElementById('middlename')
+        this.loginMiddlename = document.getElementById('login-middlename')
+        this.newPassword = document.getElementById('new-password')
+        this.confirmNewPassword = document.getElementById('confirm-new-password')
+        this.resetPasswordButton = document.getElementById('reset-password')
+        this.forgotUsername = document.getElementById('forgot-username')
 
         this.loginSwitch.addEventListener('click', ()=> this.switchSection(this.signupSwitch,this.signupSection,this.loginSwitch,this.loginSection))
         this.loginMark.addEventListener('click', ()=> this.switchSection(this.signupSwitch,this.signupSection,this.loginSwitch,this.loginSection))
@@ -30,6 +35,14 @@ class AccountHandler {
             else if(!this.signupUsername.value.match('^[a-zA-Z0-9]+$')) {this.displayError('Only alphanumeric chars allowed')}
             else if (!this.middlename.value) {this.displayError('Enter a middle name')}
             else {this.signup(this.signupUsername.value,this.signupPassword.value,this.middlename.value)}
+        })
+
+        this.resetPasswordButton.addEventListener('click',()=>{
+            if(this.newPassword.value.length < 7){this.displayError('Password too short')}
+            else if(this.newPassword.value !== this.confirmNewPassword.value) {this.displayError('Passwords do not match')}
+            else if (!this.loginMiddlename.value){this.displayError('Enter your middle name')}
+            else if (!this.forgotUsername.value){this.displayError('Enter your username')}
+            else {this.resetPassword(this.forgotUsername.value,this.loginMiddlename.value,this.newPassword.value)}
         })
     }
     switchSection(currentSwitch,currentSection,nextSwitch,nextSection){
@@ -71,6 +84,24 @@ class AccountHandler {
             localStorage.setItem('username', data.username)
             localStorage.setItem('hex', data.hex)
             window.location = `${origin}/html/account.html`
+        }
+    }
+    async resetPassword(username,middlename,password){
+        const data = {
+            username,
+            password,
+            middlename,
+        }
+        const options = {
+            method: "PATCH",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        }
+        const result = await fetch(`${origin}/resetPassword`,options).then(res=>res.json()).catch(err=>err)
+        if(result.error){
+            this.displayError(result.error)
+        } else {
+            this.displayError(result.result)
         }
     }
     displayError(error){this.errorMessage.textContent = error}
