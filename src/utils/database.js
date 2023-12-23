@@ -50,7 +50,30 @@ function logIn(username,password){
     })
 }
 
+function resetPassword(username,password,middlename){
+    return new Promise((resolve,reject)=>{
+        con.getConnection( (err,connection) =>{
+            if (err) throw err
+            let sql = `SELECT * FROM accounts WHERE username = "${username}" AND middle_name = "${middlename}"`
+            connection.query(sql, (err, result)=>{
+                if (err) throw err
+                // if none show up one of them is invalid and error is returned
+                if (!result.length) reject({error: "Invalid username/middlename"})
+                else {
+                    sql = `UPDATE accounts SET password = '${password}' WHERE username = '${username}'`
+                    connection.query(sql, (err, result)=>{
+                        if (err) throw err
+                        else {resolve({result: "Reset Successful"})}
+                    })
+                }
+            })
+            connection.release()
+        })
+    })
+}
+
 module.exports = {
     signUp,
     logIn,
+    resetPassword,
 }

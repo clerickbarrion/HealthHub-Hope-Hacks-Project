@@ -234,6 +234,7 @@ html, body {
 }
 #chat-box #chat-container form textarea {
   width: 100%;
+  background-color: white;
 }/*# sourceMappingURL=style.css.map */
 
 body {

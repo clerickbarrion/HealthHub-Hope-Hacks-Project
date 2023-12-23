@@ -14,7 +14,7 @@
 
         <nav>
           <div class="nav-wrapper blue darken-1" >
-            <a href="/public/index.html" class="brand-logo">HealthHub+</a>
+            <a href="../index.html" class="brand-logo">HealthHub+</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li><a href="symptoms.html">Symptom Checker</a></li>
@@ -46,7 +46,14 @@
             <div id="login-section">
                 <input placeholder="Username" id="login-username">
                 <input placeholder="Password" id="login-password" type="password">
-                <small>Forgot password?</small>
+                <details>
+                  <summary><small>Forgot password?</small></summary>
+                  <input placeholder="Username" id="forgot-username">
+                  <input placeholder="Middlename" id="login-middlename">
+                  <input placeholder="New password: min 6 chars" id="new-password" type="password">
+                  <input placeholder="Confirm password" id="confirm-new-password" type="password">
+                  <input type="button" value="Reset password" id="reset-password">
+                </details>
                 <button>Login</button>
                 <p>Create an account <mark>Sign up now</mark></p>
             </div>
@@ -110,7 +117,7 @@
     <script src="../js/client-chat.js"></script>
     <script src="../js/logIn.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text" src="../css/materialize-css/dist/js/materialize.min.js"></script> 
+    <script type="text" src="../js/materialize.min.js"></script> 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 </html>
