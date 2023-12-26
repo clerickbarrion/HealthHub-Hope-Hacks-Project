@@ -80,4 +80,10 @@ main section #signup-section {
 
 footer {
   margin: 0 !important;
+}
+
+@media (max-width: 760px) {
+  main section {
+    width: 100%;
+  }
 }/*# sourceMappingURL=logIn.css.map */
