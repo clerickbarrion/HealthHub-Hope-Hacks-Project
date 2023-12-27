@@ -3,6 +3,7 @@ const path = require('path')
 const connectChat = require('./utils/chat.js')
 const app = express()
 const database = require('./utils/database.js')
+const homecareAPI = require('./utils/homecare.js')
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.json())
 
@@ -22,6 +23,12 @@ app.post('/signUp', async (req,res)=>{
 
 app.patch('/resetPassword', async (req,res)=>{
     const result = await database.resetPassword(req.body.username,req.body.password,req.body.middlename).catch(err=>err)
+    res.write(JSON.stringify(result))
+    res.end()
+})
+
+app.get('/api/getRemedy', async (req,res)=>{
+    const result = await homecareAPI(req.query.search)
     res.write(JSON.stringify(result))
     res.end()
 })

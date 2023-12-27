@@ -7,11 +7,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     chatBox.innerHTML = `
         <button>Chat</button>
         <div id='chat-container'>
-            <div id="messages">
-
-            </div>
+            <div id="messages"></div>
             <small></small>
-            <form id="input-box" action="">
+            <form id="input-box">
                 <textarea placeholder='Write a message'></textarea>
             </form>
         </div>
@@ -27,7 +25,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if (chatContainer.style.display === 'none'){
             chatContainer.style.display = 'block'
             socket.emit('join')
-        }else{chatContainer.style.display = 'none'}
+        }else{
+            chatContainer.style.display = 'none'
+            socket.emit('leave')
+        }
     })
 
     input.addEventListener('keydown', e=>{

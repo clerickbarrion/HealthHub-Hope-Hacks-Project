@@ -1,6 +1,8 @@
 if (localStorage.getItem('username')){
-    const logButton = document.querySelector('nav').querySelector('a.btn')
-    logButton.href = '#'
-    logButton.textContent = localStorage.getItem('username')
-    logButton.addEventListener('click',()=>{window.location = `${window.location.origin}/html/account.html`})
+    const logButtons = document.querySelectorAll('a.btn')
+    Array.from(logButtons).forEach(button=>{
+        button.href='#'
+        button.textContent = localStorage.getItem('username')
+        button.addEventListener('click',()=>{window.location = `${window.location.origin}/html/account.html`})
+    })
 }
