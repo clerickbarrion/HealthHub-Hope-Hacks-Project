@@ -7,11 +7,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     chatBox.innerHTML = `
         <button>Chat</button>
         <div id='chat-container'>
-            <div id="messages">
-
-            </div>
+            <div id="messages"></div>
             <small></small>
-            <form id="input-box" action="">
+            <form id="input-box">
                 <textarea placeholder='Write a message'></textarea>
             </form>
         </div>
@@ -21,14 +19,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const input = chatBox.querySelector('textarea')
     const messages = chatBox.querySelector('#messages')
     const typing = chatBox.querySelector('small')
-    let cooldown = true
+    let time
     
-
     openChatBtn.addEventListener('click', ()=>{
         if (chatContainer.style.display === 'none'){
             chatContainer.style.display = 'block'
             socket.emit('join')
-        }else{chatContainer.style.display = 'none'}
+        }else{
+            chatContainer.style.display = 'none'
+            socket.emit('leave')
+        }
     })
 
     input.addEventListener('keydown', e=>{
@@ -46,24 +46,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
     socket.on('typing', typers=>{
         switch(typers.length){
             case 1:
-                typing.textContent = `${typers[0]} is typing...`; cooldown = true
+                typing.textContent = `${typers[0]} is typing...`;
                 break;
             case 2:
-                typing.textContent = `${typers[0]} and ${typers[1]} are typing...`; cooldown = true
+                typing.textContent = `${typers[0]} and ${typers[1]} are typing...`;
                 break;
             default:
-                typing.textContent = 'Several people are typing...'; cooldown = true
+                typing.textContent = 'Several people are typing...';
         }        
         
-        let time = setTimeout(()=>{
-            if (!cooldown){
-                typing.textContent = ''
-                cooldown = true
-            }else{
-                cooldown = false
-                try{time.clearTimeout()} 
-                catch {}
-            }}, 3000)
+        clearTimeout(time)
+        time = setTimeout(()=>{typing.textContent = ''}, 1000)
     })
     socket.on('chat message', msg=>{
         const p = document.createElement('p')

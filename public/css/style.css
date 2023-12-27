@@ -1,4 +1,3 @@
-
 body {
   display: flex;
   min-height: 100vh;
@@ -13,211 +12,12 @@ main {
 footer.page-footer card-panel blue darken-1 {
 margin: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 html, body {
   height: 100%;
 }
 
 #chat-box {
+  background-color: white;
   position: fixed;
   bottom: 0;
   width: 30%;
@@ -231,7 +31,6 @@ html, body {
   margin: auto;
   background-color: navy;
   color: white;
-  cursor:pointer;
 }
 #chat-box #chat-container {
   display: none;
@@ -239,24 +38,10 @@ html, body {
 #chat-box #chat-container #messages {
   max-height: 50vh;
   overflow: scroll;
-  background-color: white;
 }
 #chat-box #chat-container form {
   display: flex;
 }
 #chat-box #chat-container form textarea {
   width: 100%;
-  background-color: white;
-}/*# sourceMappingURL=style.css.map */
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-
+}
