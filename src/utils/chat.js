@@ -7,7 +7,7 @@ function connectChat(server) {
     let typers = []
     io.on('connection', socket=>{
         let user
-        let cooldown = true
+        let time
 
         socket.on('get user', name=>{name ? user = name : user = `Anon ${socket.id.substring(0,5)}`})
 
@@ -26,15 +26,8 @@ function connectChat(server) {
         socket.on('typing',()=>{
             if (!typers.includes(user)) {typers.push(user)}
             io.emit('typing', typers)
-            let time = setTimeout(()=>{
-                if (!cooldown){
-                    cooldown = true
-                    typers = typers.filter(typer => typer != user)
-                }else{
-                    cooldown = false
-                    try{time.clearTimeout()} 
-                    catch {}
-                }}, 3000)
+            clearTimeout(time)
+            time = setTimeout(()=>{typers = typers.filter(typer => typer != user)}, 1000)
         })
     })
 }
