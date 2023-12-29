@@ -1,0 +1,37 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+}
+
+form {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+label,
+input,
+button,
+ul {
+    margin-bottom: 10px;
+}
+
+#gender {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#birthYear {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}

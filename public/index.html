@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthHub</title>
     <link href="style.css" rel="stylesheet">
-    <link href="home.css" rel="stylesheet">
+    <link href="/public/css/home.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
@@ -35,8 +35,78 @@
 
 <main>
 
-  <h3>Welcome to HealthHub</h3>
-    
+  
+  <section id="section1">
+    <div class="content">
+      <div class="text-content">
+        <h3>I feel ...</h3>
+        <div id="typewriter"></div>
+        <div class="nav-wrapper blue darken-1">
+        <p id="welcome">Welcome to HealthHub+, your trusted healthcare companion! Our mission is simple: providing you with easy access to health information and solutions that make a difference. At HealthHub, we offer a diverse range of diagnoses and recommendations for at-home remedies and over-the-counter solutions. Think of us as your go-to buddy, here to empower you with the resources you need to tackle health concerns with ease and a smile!</p>
+        </div>
+      </div>
+  
+      <div id="sick-person">
+        <img src="/public/home-images/sick.jpg" width="1000px" height="550px" alt="Sick Person Image">
+      </div>
+    </div>
+  </section>
+
+  <div class="nav-wrapper blue darken-1" >
+  <section id="section2">
+    <div id="home-nav">
+      <h3 id="explore">Explore HealthHub+</h3>
+  
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li id="symptoms">
+            <a href="/public/html/symptoms.html">Symptom Checker</a>
+            <p>Input your symptoms and find a diagnosis.</p>
+          </li>
+          <li id="remedies">
+            <a href="/public/html/remedies.html">Remedies</a>
+            <p>Input your diagnosis and find at-home or over-the-counter remedies.</p>
+          </li>
+          <li id="mental">
+            <a href="/public/html/mentalHealth.html">Mental Health</a>
+            <p>Find mental health resources.</p>
+          </li>
+          <li id="doctor">
+            <a href="/public/html/doctor.html">Find a Doctor</a>
+            <p>Find a doctor near you.</p>
+          </li>
+        </ul>
+  
+        <ul class="nav-list centered">
+          <li id="login">
+            <a href="/public/html/logIn.html">Log In</a>
+            <p>Log in or create a new account.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <section id="section3">
+    <h3 id="testimonials">Testimonials</h3>
+
+    <div class="carousel">
+      <a class="carousel-item" href="#item1" id="carousel1">
+          <img src="/public/home-images/beyonce.png">
+      </a>
+  
+      <a class="carousel-item" href="#item2">
+          <img src="/public/home-images/jcole.png" id=carousel2>
+      </a>
+  
+      <a class="carousel-item" href="#item3">
+          <img src="/public/home-images/usain.png" id="carousel3">
+      </a>
+  </div>
+
+
+  </section>
 
 </main>
     
@@ -90,5 +160,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text" src="js/materialize.min.js"></script> 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/public/js/home.js"></script>
 </body>
 </html>
