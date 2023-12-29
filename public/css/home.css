@@ -1,10 +1,139 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid rgb(0, 123, 255);
+  white-space: nowrap;
+  font-size: 4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#section1 {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.text-content {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+#sick-person {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#welcome {
+  border: 1px solid black;
+  padding: 20px;
+  width: 100%;
+  color: white;
+  font-size: large;
+  margin-top: 100px;
+}
+
+#section2 {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+#home-nav {
+  text-align: center;
+  width: 50%;
+}
+
+#home-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#home-nav li {
+  margin: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+  flex: 0 0 calc(50% - 20px);
+  box-sizing: border-box;
+}
+
+#home-nav .centered {
+  flex-basis: 100%;
+}
+
+#symptoms {
+  background-color: white;;
+}
+
+#remedies {
+  background-color: white;
+}
+
+#mental {
+  background-color: white;
+}
+
+#doctor {
+  background-color: white;
+}
+
+#login {
+  background-color: white;
+}
+
+#explore {
+  color: white;
+}
+
+#section3 {
+  margin-top: 50px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+#carousel1,
+#carousel2,
+#carousel3 {
+  width: 600px;
+  height: auto;
+}
+
+#testimonials {
+  text-align: center;
+}
