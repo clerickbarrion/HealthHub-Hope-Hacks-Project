@@ -2,6 +2,15 @@
 // <script src="/socket.io/socket.io.js"></script> -- Put these two on the bottom of body tag
 // <script src="client-chat.js"></script>
 document.addEventListener('DOMContentLoaded', ()=>{
+    if (localStorage.getItem('username') && !window.location.href.includes('account.html')){
+        const logButtons = document.querySelectorAll('a.btn')
+        Array.from(logButtons).forEach(button=>{
+            button.href='#'
+            button.textContent = localStorage.getItem('username')
+            button.addEventListener('click',()=>{window.location = `${window.location.origin}/html/account.html`})
+        })
+    }
+    M.Sidenav.init(document.querySelectorAll('.sidenav'));
     const socket = io()
     const chatBox = document.getElementById('chat-box')
     chatBox.innerHTML = `

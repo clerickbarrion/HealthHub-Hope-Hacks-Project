@@ -6,19 +6,20 @@ async function getArticle(diagnosis){
     .then(res=>res.text()).then(html=>{
         const root = HTMLParser.parse(html)
         let article
-        root.querySelectorAll('a').forEach(a=>{ if ( a.innerText.toUpperCase().trim() === diagnosis.toUpperCase() ) { article = a.rawAttrs } })
-        try {return article.replaceAll('"','').replace('href=','')}
+        root.querySelector('ul#index').querySelectorAll('a').forEach(a=>{ if ( a.innerText.toUpperCase().trim() === diagnosis.toUpperCase() ) { article = a.rawAttributes.href } })
+        try {return article}
         catch {return ''}
     })
 }
 
 async function getRemedy(diagnosis){
     const article = await getArticle(diagnosis)
-    if (!article) return 'No home care found'
+    if (!article) return {error: 'No home care found'}
     return fetch(`https://medlineplus.gov/ency/${article}`)
     .then(res=>res.text()).then(html=>{
         const root = HTMLParser.parse(html)
         let homeCare
+        let img
         root.querySelectorAll('div.section').forEach(section=>{
             try{
                 if (section.querySelector('h2').innerText === 'Home Care' || section.querySelector('h2').innerText === 'Treatment'){
@@ -26,7 +27,12 @@ async function getRemedy(diagnosis){
                 }
             } catch{}
         })
-        try{return {homeCare: homeCare.innerText.replaceAll('.','. ').replaceAll('  ', ' ').replaceAll(':',": ")}}
+        if (root.querySelector('article').querySelector('img')) img = root.querySelector('article').querySelector('img').rawAttributes.src
+        try{return {
+            homeCare: homeCare.innerText.replaceAll('.','. ').replaceAll('  ', ' ').replaceAll(':',": "),
+            source: `https://medlineplus.gov/ency/${article}`,
+            img: 'https:'+img
+        }}
         catch{return {error: 'No home care found'}}
     })
 }

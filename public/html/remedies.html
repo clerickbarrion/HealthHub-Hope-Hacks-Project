@@ -35,36 +35,53 @@
 
 <main>
     <section id="remedies">
-      <div>
-        <input id="diagnosis" list="diagnosisList" placeholder="Enter diagnosis">
-        <datalist id="diagnosisList"></datalist>
-        <button id="submit-diagnosis">Find Remedies</button>
-      </div>
-      <div class="row">
-        <div class="col s6">
-          <h4 class="center-align">Recommended Remedies</h4>
-          <p id="recommended"></p>
-        </div>
-        <div class="col s6">
-          <h4 class="center-align">Alternative Treatment</h4>
-          <p id="alternative"></p>
+      <div id="diagnosis-input-container">
+        <label for="diagnosis" id="label">
+          <h2 class="blue-text center-align">Remedy Finder</h2>
+        </label>
+        <small class="center-align">Find the best cure for you</small>
+        <div id="diagnosis-input-buttons">
+          <input id="diagnosis" list="diagnosisList" placeholder="Enter diagnosis">
+          <datalist id="diagnosisList"></datalist>
+          <button id="submit-diagnosis">Find Remedies</button>
         </div>
       </div>
+
+      <section id="popup">
+        <div id="desc-wrap" class="card blue darken-1">
+          <h4 class="white">Description</h4>
+          <p id="description" class="card-content white-text"></p>
+        </div>
+
+        <div id="rec-wrap" class="card blue darken-4">
+          <h4 class="white">Remedies</h4>
+          <p id="recommended" class="card-content white-text"></p>
+        </div>
+
+        <div id="alt-wrap" class="card blue darken-1">
+          <h4 class="white">Alternative Treatment</h4>
+          <p id="alternative" class="card-content white-text"></p>
+          <div class="card-action">
+            <a href="#" class="white-text">Learn More</a>
+          </div>
+        </div>
+      </section>
+
     </section>
     <section id="tips">
         <h2 id="best-health">General Tips for Good Health</h2>
     
     <div class="carousel">
         <a class="carousel-item" href="#item1" id="carousel1">
-            <img src="/public/carousel-images/best1.png">
+            <img src="../carousel-images/best1.png">
         </a>
     
         <a class="carousel-item" href="#item2">
-            <img src="/public/carousel-images/best2.png" id=carousel2>
+            <img src="../carousel-images/best2.png" id=carousel2>
         </a>
     
         <a class="carousel-item" href="#item3">
-            <img src="/public/carousel-images/best3.png" id="carousel3">
+            <img src="../carousel-images/best3.png" id="carousel3">
         </a>
     </div>
     </section>

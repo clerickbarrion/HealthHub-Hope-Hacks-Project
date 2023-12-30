@@ -1,10 +1,11 @@
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImxlcmFuam9obnNvbjQyMEBnbWFpbC5jb20iLCJyb2xlIjoiVXNlciIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjEwNzA4IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy92ZXJzaW9uIjoiMTA5IiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9saW1pdCI6IjEwMCIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcCI6IkJhc2ljIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9sYW5ndWFnZSI6ImVuLWdiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9leHBpcmF0aW9uIjoiMjA5OS0xMi0zMSIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcHN0YXJ0IjoiMjAyMy0xMi0yMCIsImlzcyI6Imh0dHBzOi8vYXV0aHNlcnZpY2UucHJpYWlkLmNoIiwiYXVkIjoiaHR0cHM6Ly9oZWFsdGhzZXJ2aWNlLnByaWFpZC5jaCIsImV4cCI6MTcwMzc2NzA0NCwibmJmIjoxNzAzNzU5ODQ0fQ.dljP2hRkGpHkfxnt62P46kW9Es3-ci_E2s5J-M93ITE';
+
 
 let symptoms = [];
 let gender = '';
 let birthYear = '';
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
+    const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res=>res.json()).then(token=>token)
     const url = 'https://healthservice.priaid.ch/symptoms?token=' + token + '&format=json&language=en-gb';
     fetch(url)
         .then(res => res.json())
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (storedGender) {
         gender = storedGender;
         document.getElementById('gender').value = gender;
-    }
+    } else {gender = document.getElementById('gender').value}
 
     if (storedBirthYear) {
         birthYear = storedBirthYear;
@@ -95,7 +96,8 @@ function removeSymptom(symptomId) {
 }
 
 
-function getSymptomIdByName() {
+async function getSymptomIdByName() {
+    const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res=>res.json()).then(token=>token)
     const url = 'https://healthservice.priaid.ch/symptoms?token=' + token + '&format=json&language=en-gb';
     return fetch(url).then(res => res.json()).then(symptoms => symptoms);
 }
@@ -126,8 +128,9 @@ function updateDiagnosesList(diagnoses) {
     });
 }
 
-function getDiagnoses() {
+async function getDiagnoses() {
     if (selectedSymptoms.length > 0) {
+        const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res=>res.json()).then(token=>token)
         const diagnosisUrl = 'https://healthservice.priaid.ch/diagnosis?symptoms=[' + selectedSymptoms.join(',') + ']&gender=' + gender + '&year_of_birth=' + birthYear + '&token=' + token + '&format=json&language=en-gb';
 
         fetch(diagnosisUrl)

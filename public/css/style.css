@@ -31,6 +31,7 @@ html, body {
   margin: auto;
   background-color: navy;
   color: white;
+  cursor: pointer;
 }
 #chat-box #chat-container {
   display: none;
