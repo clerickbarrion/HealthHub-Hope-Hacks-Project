@@ -62,6 +62,7 @@ class AccountHandler {
             const account = result.result[0]
             localStorage.setItem('username', account.username)
             localStorage.setItem('hex', account.hex)
+            localStorage.setItem('role', account.role)
             window.location = `${origin}/html/account.html`
         }
     }

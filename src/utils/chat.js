@@ -9,15 +9,17 @@ function connectChat(server) {
         let user
         let time
         let hex
+        let role
 
         socket.on('get user', cred =>{
             cred.name ? user = cred.name : user = `Anon ${socket.id.substring(0,5)}`
             cred.hex ? hex = cred.hex : hex = '000000'
+            cred.role === 'doctor' ? role = 'Doctor ' : role = ''
         })
-        socket.on('chat message', msg=>io.emit('chat message', `<mark style="color:#${hex}">${user}:</mark> ${msg}`))
-        socket.on('join', ()=>io.emit('join', `<mark style="color:#${hex}">${user}</mark> has entered the chat`))
-        socket.on('disconnect',()=>io.emit('leave', `<mark style="color:#${hex}">${user}</mark> has left the chat`))
-        socket.on('leave',()=>io.emit('leave', `<mark style="color:#${hex}">${user}</mark> has left the chat`))
+        socket.on('chat message', msg=>io.emit('chat message', `<mark style="color:#${hex}">${role}${user}:</mark> ${msg}`))
+        socket.on('join', ()=>io.emit('join', `<mark style="color:#${hex}">${role}${user}</mark> has entered the chat`))
+        socket.on('disconnect',()=>io.emit('leave', `<mark style="color:#${hex}">${role}${user}</mark> has left the chat`))
+        socket.on('leave',()=>io.emit('leave', `<mark style="color:#${hex}">${role}${user}</mark> has left the chat`))
         socket.on('ping', ping=>io.emit('ping',ping))
         socket.on('whisper', whisper=>io.emit('whisper',whisper))
         socket.on('typing',()=>{
