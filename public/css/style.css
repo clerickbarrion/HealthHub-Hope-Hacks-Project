@@ -46,3 +46,21 @@ html, body {
 #chat-box #chat-container form textarea {
   width: 100%;
 }
+
+.ping {
+  font-size: 2rem;
+  background-color: green;
+  color: white;
+  margin:auto;
+  position: absolute;
+  border-radius: 10px;
+  padding: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flyin 1s forwards
+}
+
+@keyframes flyin {
+  from {top: -1rem}
+  to {top: 1rem}
+}
