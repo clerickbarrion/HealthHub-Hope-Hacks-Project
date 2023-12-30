@@ -35,7 +35,11 @@ function logIn(username,password){
         con.getConnection( (err,connection) =>{
             if (err) throw err
             // select query to see if user and password match
-            let sql = `SELECT * FROM accounts WHERE username = "${username}" AND password = "${password}"`
+            let sql = `
+            SELECT accounts.username, accounts.password, accounts.hex, roles.role
+            FROM accounts
+            LEFT JOIN roles ON accounts.idaccounts = roles.idaccounts
+            WHERE username = '${username}' AND password = '${password}'`
             connection.query(sql, (err, result)=>{
                 if (err) throw err
                 // if none show up one of them is invalid and error is returned

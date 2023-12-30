@@ -51,9 +51,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 socket.emit('ping', {
                     sender: localStorage.getItem('username'), 
                     receiver: user, 
-                    msg: input.value
+                    msg: input.value,
+                    role: localStorage.getItem('role')
                 })
-                input.value= '' 
+                socket.emit('chat message',input.value)
+                input.value= ''
             }else if (input.value.includes('/w')) {
                 let user = ''
                 for (let i = input.value.indexOf('/w')+3; i< input.value.indexOf(' ', input.value.indexOf('/w')+3); i++){
@@ -62,14 +64,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 socket.emit('whisper', {
                     sender: localStorage.getItem('username'), 
                     receiver: user, 
-                    msg: input.value.replace(`/w ${user}`,'')
+                    msg: input.value.replace(`/w ${user}`,''),
+                    role: localStorage.getItem('role')
                 })
                 const p = document.createElement('p')
                 p.innerHTML = `To ${user}: ${input.value.replace(`/w ${user}`,'')}`
                 p.style.color = 'blue'
                 messages.appendChild(p)
                 messages.scrollTop += 1000
-                input.value = `/w ${user}`
+                input.value = `/w ${user} `
             } else { 
                 socket.emit('chat message',input.value)
                 input.value= '' 
@@ -82,8 +85,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     socket.emit('get user', {
         name: localStorage.getItem('username'),
-        hex: localStorage.getItem('hex')}
-    )
+        hex: localStorage.getItem('hex'),
+        role: localStorage.getItem('role')
+    })
 
     socket.on('typing', typers=>{
         switch(typers.length){
@@ -125,8 +129,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     })
     socket.on('ping',ping=>{
         if (ping.receiver.toUpperCase() === localStorage.getItem('username').toUpperCase()){
+            let role
+            ping.role === 'doctor' ? role = 'Doctor ' : role = ''
             const h1 = document.createElement('h1')
-            h1.textContent = `${ping.sender} pinged you: ${ping.msg}`.replace(`@${ping.receiver}`,'')
+            h1.textContent = `${role}${ping.sender} pinged you: ${ping.msg}`.replace(`@${ping.receiver}`,'')
             h1.classList = 'ping'
             document.querySelector('body').appendChild(h1)
             setTimeout(()=>{h1.remove()},3000)
@@ -134,8 +140,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     })
     socket.on('whisper',whisper=>{
         if (whisper.receiver.toUpperCase() === localStorage.getItem('username').toUpperCase()){
+            let role 
+            whisper.role === 'doctor' ? role = 'Doctor ' : role = ''
             const p = document.createElement('p')
-            p.innerHTML = `From ${whisper.sender}: ${whisper.msg}`
+            p.innerHTML = `From ${role}${whisper.sender}: ${whisper.msg}`
             p.style.color = 'blue'
             messages.appendChild(p)
             messages.scrollTop += 1000
