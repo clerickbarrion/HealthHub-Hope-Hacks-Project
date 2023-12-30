@@ -4,6 +4,7 @@ const connectChat = require('./utils/chat.js')
 const app = express()
 const database = require('./utils/database.js')
 const homecareAPI = require('./utils/homecare.js')
+const apimedic = require('./utils/apimedic.js')
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.json())
 
@@ -27,7 +28,31 @@ app.patch('/resetPassword', async (req,res)=>{
     res.end()
 })
 
-app.get('/api/getRemedy', async (req,res)=>{
+app.get('/apimedic/getToken', async (req,res)=>{
+    const result = await apimedic.getToken()
+    res.write(JSON.stringify(result))
+    res.end()
+})
+
+app.get('/apimedic/getSymptomsList', async (req,res)=>{
+    const result = await apimedic.getSymptomsList()
+    res.write(JSON.stringify(result))
+    res.end()
+})
+
+app.get('/apimedic/getDiagnosisList', async (req,res)=>{
+    const result = await apimedic.getDiagnosisList()
+    res.write(JSON.stringify(result))
+    res.end()
+})
+
+app.get('/apimedic/getRemedy', async (req,res)=>{
+    const result = await apimedic.getRemedy(req.query.diagnosis)
+    res.write(JSON.stringify(result))
+    res.end()
+})
+
+app.get('/api/homecare', async (req,res)=>{
     const result = await homecareAPI(req.query.search)
     res.write(JSON.stringify(result))
     res.end()
