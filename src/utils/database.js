@@ -76,8 +76,27 @@ function resetPassword(username,password,middlename){
     })
 }
 
+function uploadHistory(username,diagnosis,remedy){
+    con.connection((err, connection)=>{
+        if (err) throw err
+        let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}`
+        connection.query(sql, (err, result)=>{
+            sql = `INSERT INTO history (idaccounts, history, roles) VALUES (${result.idaccounts},"${diagnosis}","${remedy}")`
+            connection.query(sql, (err,result)=>{
+                if (err) throw err
+                else {resolve({result: "History Uploaded"})}
+            })
+        })
+    })
+}
+
+function retrieveHistory(username){
+
+}
+
 module.exports = {
     signUp,
     logIn,
     resetPassword,
+    uploadHistory,
 }
