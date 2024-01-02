@@ -52,7 +52,7 @@ html, body {
   background-color: green;
   color: white;
   margin:auto;
-  position: absolute;
+  position: fixed;
   border-radius: 10px;
   padding: 1rem;
   left: 50%;
