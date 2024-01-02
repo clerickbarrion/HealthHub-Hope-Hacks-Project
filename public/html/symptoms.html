@@ -39,29 +39,32 @@
 
     </header>
     <main>
-        <form id="symptomForm">
-            <label for="selectedSymptom">Choose symptoms you are experiencing:</label>
-            <br>
-            <input type="text" list="symptoms" id="selectedSymptom">
-            <datalist id="symptoms">
-            </datalist>
-            <br>
-            <button type="button" onclick="addSymptom()">Add Symptom</button>
-            <ul id="selectedSymptoms"></ul>
-            <br>
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-            <br>
-            <label for="birthYear">Birth Year:</label>
-            <input type="number" id="birthYear" name="birthYear" min="1900" max="2100" step="1"
-                placeholder="Enter 4-digit year">
-            <br>
-            <button type="button" onclick="getDiagnoses()">Get Diagnoses</button>
-            <ul id="Diagnoses"></ul>
-        </form>
+        <div id="backgroundContainer">
+            <form id="symptomForm">
+                <h1>Symptoms Checker</h1>
+                <label for="selectedSymptom">Choose symptoms you are experiencing:</label>
+                <br>
+                <input type="text" list="symptoms" id="selectedSymptom">
+                <datalist id="symptoms">
+                </datalist>
+                <br>
+                <button type="button" onclick="addSymptom()">Add Symptom</button>
+                <ul id="selectedSymptoms"></ul>
+                <br>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <br>
+                <label for="birthYear">Birth Year:</label>
+                <input type="number" id="birthYear" name="birthYear" min="1900" max="2100" step="1"
+                    placeholder="Enter 4-digit year">
+                <br>
+                <button type="button" onclick="getDiagnoses()">Get Diagnoses</button>
+                <ul id="Diagnoses"></ul>
+            </form>
+        </div>
     </main>
 
     <footer class="page-footer card-panel blue darken-1">
