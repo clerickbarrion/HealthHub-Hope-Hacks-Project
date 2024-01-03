@@ -67,4 +67,13 @@ ol li div button {
   background-color: red;
   color: white;
   cursor: pointer;
+}
+
+@media (max-width: 823px) {
+  article {
+    flex-direction: column;
+  }
+  article section {
+    margin: auto;
+  }
 }/*# sourceMappingURL=account.css.map */

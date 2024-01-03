@@ -64,3 +64,12 @@ ol{
         cursor: pointer;
     }
 }
+
+@media (max-width: 823px){
+    article{
+        flex-direction: column;
+        section{
+            margin: auto;
+        }
+    }
+}

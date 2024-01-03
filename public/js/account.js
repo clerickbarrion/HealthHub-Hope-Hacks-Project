@@ -2,7 +2,7 @@ const username = localStorage.getItem('username')
 const greeting = document.getElementById('greeting')
 const logButton = document.querySelector('nav').querySelector('a.btn')
 logButton.addEventListener('click',()=>{ localStorage.setItem('username','') })
-greeting.textContent = `Welcome to your profile ${username}`
+greeting.textContent = `Welcome to your profile, ${username}`
 
 const history = document.getElementById('diagnosis-history')
 const description = document.getElementById('description')
@@ -46,6 +46,7 @@ fetch(`${window.location.origin}/retrieveHistory?username=${username}`)
             fetch(`${window.location.origin}/removeDiagnosis`,options)
         })
     })
+    if(history.innerHTML === ''){history.innerHTML = 'You have no history'}
 })
 
 descriptionSwitch.addEventListener('click',()=>switchSection(descriptionSwitch,description,remedySwitch,remedy))
