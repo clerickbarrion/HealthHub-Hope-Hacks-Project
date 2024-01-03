@@ -5,7 +5,7 @@ body {
 main{
     width: fit-content;
     margin: auto;
-    background-color: white;
+    background: linear-gradient(#F5E3E6,#D9E4F5);
     box-shadow: rgb(51, 51, 51) 5px 0px 15px, rgb(51, 51, 51) -5px 0px 15px;
     padding: 2rem;
 }
@@ -16,11 +16,18 @@ article {
 
     #description-switch{
         background-color: navy;
-        color: white
+        color: white;
+        cursor:pointer;
     }
     #remedy-switch{
         background-color: white;
-        color: navy
+        color: navy;
+        cursor:pointer;
+    }
+    #remove{
+        background-color: red;
+        color:white;
+        cursor:pointer;
     }
 }
 #summary{
@@ -39,4 +46,21 @@ ol{
     text-align: left;
     color: navy;
     font-size: 1.3rem;
+    li{
+        p{
+            text-decoration:underline;
+        }
+        div{
+            display: flex;
+            gap: 1rem;
+            button{
+                height: fit-content;
+                align-self: center;
+                background-color: red;
+                color:white;
+                cursor: pointer;
+            }
+        }
+        cursor: pointer;
+    }
 }
