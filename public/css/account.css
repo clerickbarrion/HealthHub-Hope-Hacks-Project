@@ -1,0 +1,45 @@
+body {
+  background: url("https://businessnc.com/wp-content/uploads/2019/11/best-dr._gettyimages-1023224308-696x316.jpg") center no-repeat;
+  background-size: 100% 100%;
+}
+
+main {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgb(51, 51, 51) 5px 0px 15px, rgb(51, 51, 51) -5px 0px 15px;
+  padding: 2rem;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+}
+article #description-switch {
+  background-color: navy;
+  color: white;
+}
+article #remedy-switch {
+  background-color: white;
+  color: navy;
+}
+
+#summary {
+  max-width: 50vh;
+  color: white;
+  display: none;
+}
+#summary #description, #summary #remedy {
+  max-height: 30vh;
+  overflow: scroll;
+}
+#summary #remedy {
+  display: none;
+}
+
+ol {
+  text-align: left;
+  color: navy;
+  font-size: 1.3rem;
+}/*# sourceMappingURL=account.css.map */

@@ -76,22 +76,33 @@ function resetPassword(username,password,middlename){
     })
 }
 
-function uploadHistory(username,diagnosis,remedy){
-    con.connection((err, connection)=>{
+function uploadHistory(username,diagnosis,diagnosisID){
+    con.getConnection((err, connection)=>{
         if (err) throw err
-        let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}`
+        let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}"`
         connection.query(sql, (err, result)=>{
-            sql = `INSERT INTO history (idaccounts, history, roles) VALUES (${result.idaccounts},"${diagnosis}","${remedy}")`
+            sql = `INSERT INTO history (idaccounts, diagnosis, diagnosisID) VALUES (${result[0].idaccounts},"${diagnosis}",${diagnosisID})`
             connection.query(sql, (err,result)=>{
                 if (err) throw err
-                else {resolve({result: "History Uploaded"})}
             })
         })
     })
 }
 
 function retrieveHistory(username){
-
+    return new Promise((resolve,reject)=>{
+        con.getConnection((err, connection)=>{
+            if (err) throw err
+            let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}"`
+            connection.query(sql, (err,result)=>{
+                sql = `SELECT diagnosis, diagnosisID FROM history WHERE idaccounts = ${result[0].idaccounts}`
+                connection.query(sql,(err,result)=>{
+                    if (err) throw err
+                    else {resolve(result)}
+                })
+            })
+        })
+    })
 }
 
 module.exports = {
@@ -99,4 +110,5 @@ module.exports = {
     logIn,
     resetPassword,
     uploadHistory,
+    retrieveHistory,
 }

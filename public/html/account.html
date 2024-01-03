@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link href="../css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/account.css">
 </head>
 <body>
     <header>
@@ -36,10 +37,21 @@
     </header>
     <main>
         <h1 id="greeting" class="center-align"></h1>
-        <article class="center-align row">
-          <section class="col s12">
+        <article class="center-align">
+          <section>
             <h2>Diagnosis History</h2>
-            <ul id="diagnosis-history"></ul>
+            <ol id="diagnosis-history"></ol>
+          </section>
+          <section>
+            <div class='card blue darken-4' id="summary">
+              <h2>Summary</h2>
+              <div>
+                <button id="description-switch">Description</button>
+                <button id="remedy-switch">Remedy</button>
+              </div>
+              <div id="description" class="card-content"></div>
+              <div id="remedy" class="card-content"></div>
+            </div>
           </section>
         </article>
     </main>
