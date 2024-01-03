@@ -68,3 +68,7 @@ app.get('/retrieveHistory', async (req,res)=>{
     res.write(JSON.stringify(result))
     res.end()
 })
+
+app.delete('/removeDiagnosis', async (req,res)=>{
+    database.removeDiagnosis(req.body.username,req.body.diagnosisID)
+})

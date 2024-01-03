@@ -95,11 +95,24 @@ function retrieveHistory(username){
             if (err) throw err
             let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}"`
             connection.query(sql, (err,result)=>{
-                sql = `SELECT diagnosis, diagnosisID FROM history WHERE idaccounts = ${result[0].idaccounts}`
+                sql = `SELECT DISTINCT diagnosis, diagnosisID FROM history WHERE idaccounts = ${result[0].idaccounts}`
                 connection.query(sql,(err,result)=>{
                     if (err) throw err
                     else {resolve(result)}
                 })
+            })
+        })
+    })
+}
+
+function removeDiagnosis(username, diagnosisID){
+    con.getConnection((err,connection)=>{
+        if (err) throw err
+        let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}"`
+        connection.query(sql, (err,result)=>{
+            sql = `DELETE FROM history WHERE idaccounts = ${result[0].idaccounts} AND diagnosisID = ${diagnosisID}`
+            connection.query(sql,(err,result)=>{
+                if (err) throw err
             })
         })
     })
@@ -111,4 +124,5 @@ module.exports = {
     resetPassword,
     uploadHistory,
     retrieveHistory,
+    removeDiagnosis,
 }
