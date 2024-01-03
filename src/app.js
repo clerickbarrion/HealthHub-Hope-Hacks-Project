@@ -62,9 +62,3 @@ app.get('/api/homecare', async (req,res)=>{
 })
 
 
-// const feelingData = require('./utils/advice.json')
-
-// app.get('/feeling', (req,res) => {
-//     res.json(feelingData.)
-
-// })
