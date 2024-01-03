@@ -5,6 +5,9 @@ const app = express()
 const database = require('./utils/database.js')
 const homecareAPI = require('./utils/homecare.js')
 const apimedic = require('./utils/apimedic.js')
+
+
+
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.json())
 
@@ -57,3 +60,11 @@ app.get('/api/homecare', async (req,res)=>{
     res.write(JSON.stringify(result))
     res.end()
 })
+
+
+// const feelingData = require('./utils/advice.json')
+
+// app.get('/feeling', (req,res) => {
+//     res.json(feelingData.)
+
+// })
