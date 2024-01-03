@@ -47,3 +47,17 @@ input{
     color: #e5e5e5;
     font-weight: 400;
 }
+
+.card .card-image .card-title {
+    background-color: #2a2828;
+    padding:12px !important;
+   
+}
+#form{
+    display: flex;
+    align-content: center;
+   
+}
+@media only screen and (min-width: 601px){
+div.row .col.s25.m6 {
+     width: 45vw ;}}
