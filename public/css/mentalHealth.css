@@ -3,6 +3,61 @@
 
 }
 
-#mentalCheckForm{
+#typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 0.15em solid rgb(0, 123, 255);
+    white-space: nowrap;
+    font-size: 4em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
 
+.typeContainer{
+    background-color: #1c1c27;
+    padding: 50px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
+label,
+input{
+    font-family: "DM Sans",sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+label{
+    display: block;
+    position: relative;
+    color: #eb3461;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+input{
+    position: relative;
+    width: 300px;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid #eb3461;
+    outline: none;
+    color: #e5e5e5;
+    font-weight: 400;
+}
+
+.card .card-image .card-title {
+    background-color: #2a2828;
+    padding:12px !important;
+   
+}
+#form{
+    display: flex;
+    align-content: center;
+   
+}
+@media only screen and (min-width: 601px){
+div.row .col.s25.m6 {
+     width: 45vw ;}}
