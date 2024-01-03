@@ -5,6 +5,9 @@ const app = express()
 const database = require('./utils/database.js')
 const homecareAPI = require('./utils/homecare.js')
 const apimedic = require('./utils/apimedic.js')
+
+
+
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.json())
 
@@ -72,3 +75,4 @@ app.get('/retrieveHistory', async (req,res)=>{
 app.delete('/removeDiagnosis', async (req,res)=>{
     database.removeDiagnosis(req.body.username,req.body.diagnosisID)
 })
+

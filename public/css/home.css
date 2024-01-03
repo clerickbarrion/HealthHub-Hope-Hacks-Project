@@ -19,6 +19,7 @@ h3 {
   white-space: nowrap;
   font-size: 4em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100px;
  
 }
 

@@ -40,3 +40,8 @@ function type() {
 }
 
 type();
+
+// create drop down menu of feelings that narrows the list to match, displays no relsults in drop menu if none are in list
+//takes selected feeling and returns matching value from object, get resources trigger modal
+// when id.agree is clicked. use feelings.inner text to s
+// 
