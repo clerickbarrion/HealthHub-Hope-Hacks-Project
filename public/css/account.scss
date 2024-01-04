@@ -1,18 +1,16 @@
-body {
+body,html {
     background: url('https://businessnc.com/wp-content/uploads/2019/11/best-dr._gettyimages-1023224308-696x316.jpg') center no-repeat;
     background-size: 100% 100%;
 }
 main{
     width: fit-content;
     margin: auto;
-    background: linear-gradient(#F5E3E6,#D9E4F5);
+    background-color: white;
     box-shadow: rgb(51, 51, 51) 5px 0px 15px, rgb(51, 51, 51) -5px 0px 15px;
     padding: 2rem;
 }
 
 article {
-    display:flex;
-    justify-content: space-between;
 
     #description-switch{
         background-color: navy;
@@ -29,27 +27,27 @@ article {
         color:white;
         cursor:pointer;
     }
+    height: 60vh;
+    overflow: scroll;
 }
-#summary{
-    max-width: 50vh;
-    color:white;
-    display: none;
-    #description,#remedy {
-        max-height: 30vh;
-        overflow: scroll;
-    }
-    #remedy {
-        display:none;
-    }
-}
+// #history{
+//     max-width: 50vh;
+//     color:white;
+//     display: none;
+//     #description,#remedy {
+//         max-height: 30vh;
+//         overflow: scroll;
+//     }
+//     #remedy {
+//         display:none;
+//     }
+// }
 ol{
     text-align: left;
     color: navy;
+    font-weight: bold;
     font-size: 1.3rem;
     li{
-        p{
-            text-decoration:underline;
-        }
         div{
             display: flex;
             gap: 1rem;
@@ -71,5 +69,12 @@ ol{
         section{
             margin: auto;
         }
+    }
+}
+.collapsible-body{
+    max-width: 50vw; 
+    max-height:50vh;
+    #remedy{
+        display:none;
     }
 }
