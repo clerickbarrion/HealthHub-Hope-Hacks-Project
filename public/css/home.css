@@ -5,10 +5,10 @@ body {
 }
 
 main {
-  flex: 1 0 auto;
+  flex: 1;
 }
 
-h3 {
+h3, #typewriter {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -18,7 +18,6 @@ h3 {
   border-right: 0.15em solid rgb(0, 123, 255);
   white-space: nowrap;
   font-size: 4em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #section1 {
@@ -30,89 +29,62 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
-.text-content {
+.text-content, #sick-person {
   width: 50%;
   box-sizing: border-box;
   padding: 20px;
-}
-
-#sick-person {
-  width: 50%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-end;
 }
 
 #welcome {
   border: 1px solid black;
   padding: 20px;
-  width: 100%;
   color: white;
   font-size: large;
   margin-top: 100px;
 }
 
 #section2 {
-  border: 1px solid black;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 15px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 #home-nav {
-  text-align: center;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-#home-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.card.blue-grey.darken-1 {
+  height: 100px;
+  width: 400px;
+  background-color: #1976D2 !important;
+}
+
+.card.blue-grey.darken-1 .card-content.white-text,
+.card.blue-grey.darken-1 .card-action a {
+  color: white !important;
+}
+
+.row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-#home-nav li {
-  margin: 10px;
-  border: 2px solid black;
-  padding: 10px;
-  text-align: center;
-  flex: 0 0 calc(50% - 20px);
+.col {
+  flex: 0 0 auto;
+  margin: 0 8px;
+  margin-bottom: 16px;
+}
+
+.card-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
   box-sizing: border-box;
-}
-
-#home-nav .centered {
-  flex-basis: 100%;
-}
-
-#symptoms {
-  background-color: white;;
-}
-
-#remedies {
-  background-color: white;
-}
-
-#mental {
-  background-color: white;
-}
-
-#doctor {
-  background-color: white;
-}
-
-#login {
-  background-color: white;
-}
-
-#explore {
-  color: white;
 }
 
 #section3 {
@@ -127,13 +99,59 @@ h3 {
   margin: 0 auto;
 }
 
-#carousel1,
-#carousel2,
-#carousel3 {
+#carousel1, #carousel2, #carousel3 {
   width: 600px;
   height: auto;
 }
 
 #testimonials {
   text-align: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .text-content, #sick-person {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #sick-person {
+    display: none;
+  }
+
+  .text-content {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #section2 .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #section2 .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
