@@ -2,13 +2,26 @@
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, options);
-
-instances.open();
   });
 
 
 
   const adviceOutput = document.getElementById('resourceList')
+  const agreeButton = document.getElementById('agree')
+
+  // function resourceDisplay(){
+fetch(`${window.location.origin}/feeling`)
+.then(res=> res.json())
+.then(list=>console.log(list))
+
+  // }
+  //resourceDisplay()
+
+  // create drop down menu of feelings that narrows the list to match, displays no relsults in drop menu if none are in list
+//takes selected feeling and returns matching value from object, get resources trigger modal
+// when id.agree is clicked. use feelings.inner text to s
+//
+
 
 
 let i = 0;
@@ -44,7 +57,4 @@ function type() {
 
 type();
 
-// create drop down menu of feelings that narrows the list to match, displays no relsults in drop menu if none are in list
-//takes selected feeling and returns matching value from object, get resources trigger modal
-// when id.agree is clicked. use feelings.inner text to s
-// 
+ 

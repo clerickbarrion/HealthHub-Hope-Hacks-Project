@@ -77,5 +77,10 @@ app.delete('/removeDiagnosis', async (req,res)=>{
 })
 
 const feelingData = require('./utils/advice.json')
+const fs = require('fs')
 
-// app.get()
+
+
+app.get('/feeling', (req, res) => {
+res.write(fs.readFileSync('src/utils/advice.json').toString())
+})
