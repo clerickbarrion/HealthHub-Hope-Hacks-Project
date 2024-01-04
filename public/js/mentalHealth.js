@@ -8,6 +8,9 @@ instances.open();
 
 
 
+  const adviceOutput = document.getElementById('resourceList')
+
+
 let i = 0;
 let placeholder = "";
 const words = ["Depressed...", "Overwhelmed...", "Anxious...", "Frustrated...", "Manic...", "Alone...", "Guilty..."];

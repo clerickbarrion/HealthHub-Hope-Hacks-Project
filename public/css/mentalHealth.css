@@ -14,7 +14,7 @@
   
 
 .typeContainer{
-    background-color: #1c1c27;
+    background-color: #000000;
     padding: 50px;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -42,9 +42,9 @@ input{
     padding: 10px 0;
     background-color: transparent;
     border: none;
-    border-bottom: 1.5px solid #eb3461;
+    border-bottom: 1.5px solid #0e0d0d;
     outline: none;
-    color: #e5e5e5;
+    color: #393838;
     font-weight: 400;
 }
 
