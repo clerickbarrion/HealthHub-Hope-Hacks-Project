@@ -54,5 +54,16 @@ findRemediesBtn.addEventListener('click', async ()=>{
         // if (alt.img) {document.querySelector('.card-image').querySelector('img').src = alt.img;}
         // else {document.querySelector('.card-image').querySelector('img').src = }
         localStorage.setItem('firstDiagnosis', '')
+        const data = {
+            username: localStorage.getItem('username'),
+            diagnosis: diagnosis.value,
+            diagnosisId: issue.ID
+        }
+        const options = {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        }
+        fetch(`${window.location.origin}/uploadHistory`,options)
     }
 })

@@ -5,6 +5,9 @@ const app = express()
 const database = require('./utils/database.js')
 const homecareAPI = require('./utils/homecare.js')
 const apimedic = require('./utils/apimedic.js')
+
+
+
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.json())
 
@@ -57,3 +60,19 @@ app.get('/api/homecare', async (req,res)=>{
     res.write(JSON.stringify(result))
     res.end()
 })
+
+app.post('/uploadHistory', (req,res)=>{
+    database.uploadHistory(req.body.username,req.body.diagnosis,req.body.diagnosisId)
+    res.end()
+})
+
+app.get('/retrieveHistory', async (req,res)=>{
+    const result = await database.retrieveHistory(req.query.username)
+    res.write(JSON.stringify(result))
+    res.end()
+})
+
+app.delete('/removeDiagnosis', async (req,res)=>{
+    database.removeDiagnosis(req.body.username,req.body.diagnosisID)
+})
+
