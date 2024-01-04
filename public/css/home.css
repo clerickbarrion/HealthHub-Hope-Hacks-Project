@@ -18,6 +18,9 @@ h3, #typewriter {
   border-right: 0.15em solid rgb(0, 123, 255);
   white-space: nowrap;
   font-size: 4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100px;
+ 
 }
 
 #section1 {

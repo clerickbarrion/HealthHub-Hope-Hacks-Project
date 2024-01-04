@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Doctor</title>
-    <link href="/public/css/style.css" rel="stylesheet">
-    <link href="/public/css/doctor.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/doctor.css" rel="stylesheet">
 <!-- copy from here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -19,25 +19,25 @@
 <header>
 
   <nav>
-    <div class="nav-wrapper blue darken-1" >
-      <a href="/public/index.html" class="brand-logo">HealthHub+</a>
+    <div class="nav-wrapper blue darken-4" >
+      <a href="../index.html" class="brand-logo">HealthHub+</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/public/html/symptoms.html">Symptom Checker</a></li>
-        <li><a href="/public/html/remedies.html">Remedies</a></li>
-        <li><a href="/public/html/mentalHealth.html">Mental Health</a></li>
-        <li><a href="/public/html/doctor.html">Find a Doctor</a></li>
-        <li><a href="/public/html/logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
+        <li><a href="../html/symptoms.html">Symptom Checker</a></li>
+        <li><a href="../html/remedies.html">Remedies</a></li>
+        <li><a href="../html/mentalHealth.html">Mental Health</a></li>
+        <li><a href="../html/doctor.html">Find a Doctor</a></li>
+        <li><a href="../html/logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="/public/html/symptoms.html">Symptom Checker</a></li>
-    <li><a href="/public/html/remedies.html">Remedies</a></li>
-    <li><a href="/public/html/mentalHealth.html">Mental Health</a></li>
-    <li><a href="/public/html/doctor.html">Find a Doctor</a></li>
-    <li><a href="/public/html/logIn.html">Log In</a></li>
+    <li><a href="../html/symptoms.html">Symptom Checker</a></li>
+    <li><a href="../html/remedies.html">Remedies</a></li>
+    <li><a href="../html/mentalHealth.html">Mental Health</a></li>
+    <li><a href="../html/doctor.html">Find a Doctor</a></li>
+    <li><a href="../html/logIn.html">Log In</a></li>
   </ul>
 
   </header>
@@ -45,14 +45,14 @@
 
      <h3 class="center-align">Find a doctor near you</h3>
     
-   <iframe src="https://storage.googleapis.com/maps-solutions-yqyn9lufwl/neighborhood-discovery/7gpx/neighborhood-discovery.html"
-  width="100%" height="85%"
-  style="border:0;"
-  loading="lazy">
-</iframe>
+     <iframe src="https://storage.googleapis.com/maps-solutions-yqyn9lufwl/neighborhood-discovery/l4vz/neighborhood-discovery.html"
+     width="100%" height="85%"
+     style="border:0;"
+     loading="lazy">
+   </iframe>
 </main>
 
-     <footer class="page-footer card-panel blue darken-1">
+     <footer class="page-footer card-panel blue darken-4">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
@@ -97,10 +97,13 @@
           </div>
         </div>
       </footer>
-      <script type="text/javascript" src="/public/js/doctor.js"></script>
+      <script type="text/javascript" src="../js/doctor.js"></script>
       <!-- copy from here -->
+      <div id="chat-box"></div>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="../js/client-chat.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script type="text" src="js/materialize.min.js"></script> 
+      <script type="text" src="../css/materialize-css/dist/js/materialize.min.js"></script> 
      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
      <!-- to here -->
 </body>
