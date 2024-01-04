@@ -58,63 +58,48 @@ h3 {
 }
 
 #section2 {
-  border: 1px solid black;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 15px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 #home-nav {
-  text-align: center;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-#home-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.card.blue.darken-4 {
+  height: 100px;
+  width: 400px;
+}
+
+.card.blue.darken-4 .card-content.white-text,
+.card.blue.darken-4 .card-action a {
+  color: white !important;
+}
+
+.row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-#home-nav li {
-  margin: 10px;
-  border: 2px solid black;
-  padding: 10px;
-  text-align: center;
-  flex: 0 0 calc(50% - 20px);
+.col {
+  flex: 0 0 auto;
+  margin: 0 8px;
+  margin-bottom: 16px;
+}
+
+.card-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-#home-nav .centered {
-  flex-basis: 100%;
-}
-
-#symptoms {
-  background-color: white;;
-}
-
-#remedies {
-  background-color: white;
-}
-
-#mental {
-  background-color: white;
-}
-
-#doctor {
-  background-color: white;
-}
-
-#login {
-  background-color: white;
-}
-
 #explore {
-  color: white;
+  color: black;
 }
 
 #section3 {
@@ -138,4 +123,51 @@ h3 {
 
 #testimonials {
   text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .text-content, #sick-person {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #sick-person {
+    display: none;
+  }
+
+  .text-content {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #section2 .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #section2 .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

@@ -76,3 +76,6 @@ app.delete('/removeDiagnosis', async (req,res)=>{
     database.removeDiagnosis(req.body.username,req.body.diagnosisID)
 })
 
+const feelingData = require('./utils/advice.json')
+
+// app.get()
