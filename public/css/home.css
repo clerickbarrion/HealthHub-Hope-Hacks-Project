@@ -5,10 +5,10 @@ body {
 }
 
 main {
-  flex: 1;
+  flex: 1 0 auto;
 }
 
-h3, #typewriter {
+h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -32,17 +32,26 @@ h3, #typewriter {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
-.text-content, #sick-person {
+.text-content {
   width: 50%;
   box-sizing: border-box;
   padding: 20px;
 }
 
+#sick-person {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+
 #welcome {
   border: 1px solid black;
   padding: 20px;
+  width: 100%;
   color: white;
   font-size: large;
   margin-top: 100px;
@@ -63,7 +72,7 @@ h3, #typewriter {
 .card.blue-grey.darken-1 {
   height: 100px;
   width: 400px;
-  background-color: #1976D2 !important;
+  background-color: #12548e !important;
 }
 
 .card.blue-grey.darken-1 .card-content.white-text,
@@ -90,6 +99,10 @@ h3, #typewriter {
   box-sizing: border-box;
 }
 
+#explore {
+  color: black;
+}
+
 #section3 {
   margin-top: 50px;
 }
@@ -102,7 +115,9 @@ h3, #typewriter {
   margin: 0 auto;
 }
 
-#carousel1, #carousel2, #carousel3 {
+#carousel1,
+#carousel2,
+#carousel3 {
   width: 600px;
   height: auto;
 }
@@ -110,7 +125,6 @@ h3, #typewriter {
 #testimonials {
   text-align: center;
 }
-
 
 @media screen and (max-width: 1200px) {
   .content {
