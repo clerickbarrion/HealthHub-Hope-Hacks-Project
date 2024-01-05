@@ -34,7 +34,7 @@ main {
         small {
             margin-top: 10px;
             font-size: 1rem;
-            color:navy;
+            color:#0d47a1;
             cursor: pointer;
         }
         * {
@@ -48,7 +48,7 @@ main {
             }
             #login-switch {
                 color: white;
-                background-color: navy;
+                background-color: #0d47a1;
             }
         }
         #login-section,#signup-section{
@@ -58,7 +58,7 @@ main {
                 width: 100%;
                 margin-left:0;
                 padding: 0;
-                background-color: navy;
+                background-color: #0d47a1;
                 color:white;
             }
             p{
@@ -67,7 +67,7 @@ main {
                 text-align: center;
                 mark {
                     background-color: inherit;
-                    color:navy;
+                    color:#0d47a1;
                     cursor: pointer;
                 }
             }

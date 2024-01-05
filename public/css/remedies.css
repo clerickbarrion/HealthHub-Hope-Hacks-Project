@@ -4,6 +4,7 @@
     color: black;
 }
 
+
 #tips,#remedies {
     display: flex;
     justify-content: center;
@@ -16,7 +17,10 @@
     padding-bottom: 40px;
     background-color: white;
 }
-
+#tips{
+    width: 60vw;
+    margin-left:-20%;
+}
 .carousel {
     display: flex;
     justify-content: center;
@@ -64,3 +68,10 @@
             min-height: 30vh;
             max-height: 50vh;
             overflow: scroll;}
+
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+                background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
+              }

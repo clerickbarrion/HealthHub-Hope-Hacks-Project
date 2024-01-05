@@ -63,3 +63,9 @@ input{
 @media only screen and (min-width: 601px){
 div.row .col.s25.m6 {
      width: 45vw ;}}
+     body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
+      }
