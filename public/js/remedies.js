@@ -51,8 +51,6 @@ findRemediesBtn.addEventListener('click', async ()=>{
         recommended.textContent = remedy
         alternative.textContent = alt.homeCare || alt.error
         if (alt.source) document.getElementById('alt-wrap').querySelector('a').href = alt.source
-        // if (alt.img) {document.querySelector('.card-image').querySelector('img').src = alt.img;}
-        // else {document.querySelector('.card-image').querySelector('img').src = }
         localStorage.setItem('firstDiagnosis', '')
         const data = {
             username: localStorage.getItem('username'),
