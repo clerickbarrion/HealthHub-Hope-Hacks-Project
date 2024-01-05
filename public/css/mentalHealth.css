@@ -11,7 +11,9 @@
     font-size: 4em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  
+  #form{
+    margin-top: 3%;
+  }
 
 .typeContainer{
     background-color: #000000;
