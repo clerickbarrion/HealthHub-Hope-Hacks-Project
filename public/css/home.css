@@ -150,19 +150,7 @@ h3 {
     max-width: 100%;
     padding: 10px;
   }
-}
-
-@media screen and (max-width: 768px) {
-  #sick-person {
-    display: none;
-  }
-
-  .text-content {
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 1200px) {
+  
   #section2 .row {
     display: flex;
     flex-direction: column;
@@ -175,7 +163,17 @@ h3 {
   }
 }
 
+  
+
 @media screen and (max-width: 767px) {
+  #sick-person {
+    display: none;
+  }
+
+  .text-content {
+    max-width: 100%;
+  }
+
   #section2 .row {
     display: flex;
     flex-direction: column;
