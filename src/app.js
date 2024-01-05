@@ -76,11 +76,11 @@ app.delete('/removeDiagnosis', async (req,res)=>{
     database.removeDiagnosis(req.body.username,req.body.diagnosisID)
 })
 
-const feelingData = require('./utils/advice.json')
+//const feelingData = require('./utils/advice.json')
 const fs = require('fs')
 
 
 
 app.get('/feeling', (req, res) => {
 res.write(fs.readFileSync('src/utils/advice.json').toString())
-})
+res.end()})
