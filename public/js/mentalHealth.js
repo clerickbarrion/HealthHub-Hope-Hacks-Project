@@ -5,17 +5,43 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-
+const feelingInputElem= document.getElementById('feeling')
+//const feelingInput = feelingInputElem.value
   const adviceOutput = document.getElementById('resourceList')
   const agreeButton = document.getElementById('agree')
 
-  // function resourceDisplay(){
-fetch(`${window.location.origin}/feeling`)
-.then(res=> res.json())
-.then(list=>console.log(list))
+agreeButton.addEventListener('click', async ()=>{
+console.log('click')
+const list = await resourceDisplay()
+console.log(list)
+for (let i = 0; i < list.length ; i++){
+  if(feelingInputElem.value === list[i].feeling){
 
-  // }
-  //resourceDisplay()
+
+
+    console.log('working')
+  }
+  else{ console.log('not working')}
+  // console.log(feelingInput)
+console.log(list[i].feeling)
+ }
+}
+
+)
+
+  async function resourceDisplay(){
+console.log('triggered')
+return fetch(`${window.location.origin}/feeling`)
+.then(res=> res.json())
+.then(list=>{
+  return list
+
+
+ 
+})}
+  
+
+
 
   // create drop down menu of feelings that narrows the list to match, displays no relsults in drop menu if none are in list
 //takes selected feeling and returns matching value from object, get resources trigger modal
