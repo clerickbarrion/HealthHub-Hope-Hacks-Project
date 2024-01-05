@@ -2,7 +2,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: linear-gradient(to bottom, #bbdefb, #f5f5f5); /* Change colors as per your choice */
+  background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
 }
 
 main {
@@ -55,6 +55,9 @@ h3 {
   color: white;
   font-size: large;
   margin-top: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto','Oxygen-Sans','Ubuntu','Cantarell',"Helvetica Neue",sans-serif;
+
 }
 
 #section2 {
@@ -78,6 +81,19 @@ h3 {
 .card.blue.darken-4 .card-action a {
   color: white !important;
 }
+
+.card-content.white-text {
+  padding-bottom: 30px;
+}
+
+.card.blue.darken-4 {
+  margin-bottom: 50px;
+}
+
+.card.blue.darken-4 .card-action {
+  padding-top: 10px;
+}
+
 
 .row {
   display: flex;
