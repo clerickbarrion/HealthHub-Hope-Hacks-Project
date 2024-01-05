@@ -2,6 +2,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background: linear-gradient(to bottom, #bbdefb, #f5f5f5); /* Change colors as per your choice */
 }
 
 main {
@@ -36,20 +37,19 @@ h3 {
 }
 
 .text-content {
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
   padding: 20px;
 }
 
 #sick-person {
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
 }
 
 #welcome {
-  border: 1px solid black;
   padding: 20px;
   width: 100%;
   color: white;
