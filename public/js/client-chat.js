@@ -34,9 +34,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if (chatContainer.style.display === 'none'){
             chatContainer.style.display = 'block'
             socket.emit('join')
-        }else{
+        }else if (chatContainer.style.display === 'block'){
             chatContainer.style.display = 'none'
             socket.emit('leave')
+        } else {
+            chatContainer.style.display = 'block'
+            socket.emit('join')
         }
     })
 

@@ -52,16 +52,18 @@ findRemediesBtn.addEventListener('click', async ()=>{
         alternative.textContent = alt.homeCare || alt.error
         if (alt.source) document.getElementById('alt-wrap').querySelector('a').href = alt.source
         localStorage.setItem('firstDiagnosis', '')
-        const data = {
-            username: localStorage.getItem('username'),
-            diagnosis: diagnosis.value,
-            diagnosisId: issue.ID
+        if (localStorage.getItem('username')){
+            const data = {
+                username: localStorage.getItem('username'),
+                diagnosis: diagnosis.value,
+                diagnosisId: issue.ID
+            }
+            const options = {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            }
+            fetch(`${window.location.origin}/uploadHistory`,options)
         }
-        const options = {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(data)
-        }
-        fetch(`${window.location.origin}/uploadHistory`,options)
     }
 })

@@ -65,10 +65,10 @@ fetch(`${window.location.origin}/retrieveHistory?username=${username}`)
 
 
 function switchSection(currentSwitch,currentSection,nextSwitch,nextSection){
-    nextSwitch.style.backgroundColor = 'blue darken-4'
+    nextSwitch.style.backgroundColor = '#0D47A1'
     nextSwitch.style.color = 'white'
     currentSwitch.style.backgroundColor = 'white'
-    currentSwitch.style.color = 'blue darken-4'
+    currentSwitch.style.color = '#0D47A1'
     currentSection.style.display = 'none'
     nextSection.style.display = 'flex'
 }

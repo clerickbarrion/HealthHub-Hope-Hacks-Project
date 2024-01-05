@@ -12,18 +12,25 @@ main {
   padding: 2rem;
 }
 
+h2 {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+}
+
 article {
   height: 60vh;
   overflow: scroll;
 }
 article #description-switch {
-  background-color: #0d47a1;
+  background-color: navy;
   color: white;
   cursor: pointer;
 }
 article #remedy-switch {
   background-color: white;
-  color: #0d47a1;
+  color: navy;
   cursor: pointer;
 }
 article #remove {
@@ -34,7 +41,7 @@ article #remove {
 
 ol {
   text-align: left;
-  color: #0d47a1;
+  color: navy;
   font-weight: bold;
   font-size: 1.3rem;
 }
