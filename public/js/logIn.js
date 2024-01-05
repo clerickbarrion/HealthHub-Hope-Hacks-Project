@@ -46,10 +46,10 @@ class AccountHandler {
         })
     }
     switchSection(currentSwitch,currentSection,nextSwitch,nextSection){
-        nextSwitch.style.backgroundColor = 'navy'
+        nextSwitch.style.backgroundColor = '#0d47a1'
         nextSwitch.style.color = 'white'
-        currentSwitch.style.backgroundColor = 'initial'
-        currentSwitch.style.color = 'initial'
+        currentSwitch.style.backgroundColor = '#26a69a'
+        currentSwitch.style.color = 'white'
         currentSection.style.display = 'none'
         nextSection.style.display = 'flex'
     }
