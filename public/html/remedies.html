@@ -34,40 +34,57 @@
     </ul>
 
 <main>
-    <section id="remedies">
+
+      <div id='form'id="remedies" class="center-align">
+        <div class="row">
+          <div class="col s25 m6  center-align">
+            <div class="card center-align">
+              <div class="card-content white-text center-align">
+  
       <div id="diagnosis-input-container">
         <label for="diagnosis" id="label">
-          <h2 class="dark blue-text center-align">Remedy Finder</h2>
+          <span class="card-title"> <h3 class="center-align black-text">Remedy Finder</h3></span>
         </label>
         <small class="center-align">Find the best cure for you</small>
-        <div id="diagnosis-input-buttons">
-          <input  class="blue darken-4 white-text" id="diagnosis" list="diagnosisList" placeholder="Enter diagnosis">
+        <div id="diagnosis-input-buttons" class="center-align">
+          <input  class="blue darken-4 white-text center-align" id="diagnosis" list="diagnosisList" placeholder="Enter diagnosis">
           <datalist id="diagnosisList"></datalist>
-          <button class="blue darken-4 white-text" id="submit-diagnosis">Find Remedies</button>
+          
         </div>
       </div>
 
-      <section id="popup">
-        <div id="desc-wrap" class="card blue darken-4">
-          <h4 class="white">Description</h4>
-          <p id="description" class="card-content white-text"></p>
-        </div>
+                
+        
+               
+      </div>
+      <div class="card-action"> 
+        <button class="center-align waves-light btn modal-trigger blue darken-4" id="submit-diagnosis" >Find Remedies</button>
 
-        <div id="rec-wrap" class="card blue darken-4">
-          <h4 class="white">Remedies</h4>
-          <p id="recommended" class="card-content white-text"></p>
-        </div>
-
-        <div id="alt-wrap" class="card blue darken-4">
-          <h4 class="white">Alternative Treatment</h4>
-          <p id="alternative" class="card-content white-text"></p>
-          <div class="card-action">
-            <a href="#" class="white-text">Learn More</a>
+        <section id="popup">
+          <div id="desc-wrap" class="card blue darken-4">
+            <h4 class="white">Description</h4>
+            <p id="description" class="card-content white-text"></p>
           </div>
-        </div>
-      </section>
+  
+          <div id="rec-wrap" class="card blue darken-4">
+            <h4 class="white">Remedies</h4>
+            <p id="recommended" class="card-content white-text"></p>
+          </div>
+  
+          <div id="alt-wrap" class="card blue darken-4">
+            <h4 class="white">Alternative Treatment</h4>
+            <p id="alternative" class="card-content white-text"></p>
+           
+          </div>
+        </section>
 
-    </section>
+
+      </div>
+      </div>
+
+    
+
+   
     <section id="tips">
         <h2 id="best-health">General Tips for Good Health</h2>
     
@@ -142,5 +159,6 @@
     <script src="../js/remedies.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="../js/client-chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 </body>
 </html>
