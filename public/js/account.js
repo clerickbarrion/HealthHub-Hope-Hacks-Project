@@ -16,11 +16,11 @@ fetch(`${window.location.origin}/retrieveHistory?username=${username}`)
     diagnosisList.forEach(diagnosis=>{
         const li = document.createElement('li')
         li.innerHTML = `
-        <div class="collapsible-header"> <p>${diagnosis.diagnosis}</p> <button>Remove</button> </div>
+        <div class="collapsible-header"> <p>${diagnosis.diagnosis}</p> <button class="waves-effect waves-light btn blue darken-4">Remove</button> </div>
         <div class="collapsible-body"> 
             <div>
-                <button id="description-switch">Description</button>
-                <button id="remedy-switch">Remedy</button>
+                <button id="description-switch" class="waves-effect waves-light btn">Description</button>
+                <button id="remedy-switch" class="waves-effect waves-light btn">Remedy</button>
             </div>
             <div id="description" class="card-content"></div>
             <div id="remedy" class="card-content"></div> 
@@ -65,10 +65,10 @@ fetch(`${window.location.origin}/retrieveHistory?username=${username}`)
 
 
 function switchSection(currentSwitch,currentSection,nextSwitch,nextSection){
-    nextSwitch.style.backgroundColor = 'navy'
+    nextSwitch.style.backgroundColor = 'blue darken-4'
     nextSwitch.style.color = 'white'
     currentSwitch.style.backgroundColor = 'white'
-    currentSwitch.style.color = 'navy'
+    currentSwitch.style.color = 'blue darken-4'
     currentSection.style.display = 'none'
     nextSection.style.display = 'flex'
 }

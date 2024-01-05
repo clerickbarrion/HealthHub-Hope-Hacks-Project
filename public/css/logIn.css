@@ -36,7 +36,7 @@ main section button, main section input {
 main section small {
   margin-top: 10px;
   font-size: 1rem;
-  color: navy;
+  color: #0d47a1;
   cursor: pointer;
 }
 main section * {
@@ -51,7 +51,7 @@ main section div button {
 }
 main section div #login-switch {
   color: white;
-  background-color: navy;
+  background-color: #0d47a1;
 }
 main section #login-section, main section #signup-section {
   display: flex;
@@ -61,7 +61,7 @@ main section #login-section button, main section #signup-section button {
   width: 100%;
   margin-left: 0;
   padding: 0;
-  background-color: navy;
+  background-color: #0d47a1;
   color: white;
 }
 main section #login-section p, main section #signup-section p {
@@ -71,7 +71,7 @@ main section #login-section p, main section #signup-section p {
 }
 main section #login-section p mark, main section #signup-section p mark {
   background-color: inherit;
-  color: navy;
+  color: #0d47a1;
   cursor: pointer;
 }
 main section #signup-section {

@@ -17,13 +17,13 @@ article {
   overflow: scroll;
 }
 article #description-switch {
-  background-color: navy;
+  background-color: #0d47a1;
   color: white;
   cursor: pointer;
 }
 article #remedy-switch {
   background-color: white;
-  color: navy;
+  color: #0d47a1;
   cursor: pointer;
 }
 article #remove {
@@ -34,7 +34,7 @@ article #remove {
 
 ol {
   text-align: left;
-  color: navy;
+  color: #0d47a1;
   font-weight: bold;
   font-size: 1.3rem;
 }
