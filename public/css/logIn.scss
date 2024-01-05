@@ -50,13 +50,17 @@ main {
                 color: white;
                 background-color: #0d47a1;
             }
+            #signup-switch{
+                background-color: white;
+                color:black;
+            }
         }
         #login-section,#signup-section{
             display:flex;
             flex-direction: column;
             button {
-                width: 100%;
-                margin-left:0;
+                width: 50%;
+                align-self: center;
                 padding: 0;
                 background-color: #0d47a1;
                 color:white;
