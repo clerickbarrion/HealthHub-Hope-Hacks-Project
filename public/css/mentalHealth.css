@@ -60,6 +60,12 @@ input{
     align-content: center;
    
 }
+
+.card-size {
+    height: 600px !important;
+}
+
+
 @media only screen and (min-width: 601px){
 div.row .col.s25.m6 {
      width: 45vw ;}}
@@ -69,3 +75,21 @@ div.row .col.s25.m6 {
         flex-direction: column;
         background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
       }
+
+      @media (max-width: 767px) {
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .col.s4 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+    
+        .card-content p {
+            font-size: 20px;
+        }
+    }
