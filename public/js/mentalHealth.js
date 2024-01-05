@@ -6,31 +6,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 const feelingInputElem= document.getElementById('feeling')
-//const feelingInput = feelingInputElem.value
-  const adviceOutput = document.getElementById('resourceList')
+const adviceHeader = document.getElementById('resourceHeading')
+  const adviceOutput1 = document.getElementById('resourceList1')
+  const adviceOutput2 = document.getElementById('resourceList2')
+  const adviceOutput3 = document.getElementById('resourceList3')
   const agreeButton = document.getElementById('agree')
 
 agreeButton.addEventListener('click', async ()=>{
-console.log('click')
+
 const list = await resourceDisplay()
 console.log(list)
 for (let i = 0; i < list.length ; i++){
   if(feelingInputElem.value === list[i].feeling){
+  adviceHeader.innerText='Here are tips based on how you\'re feeling:'
+adviceOutput1.innerText= list[i].advice1;
+adviceOutput2.innerText= list[i].advice2;
+adviceOutput3.innerText= list[i].advice3;
 
-
-
-    console.log('working')
-  }
-  else{ console.log('not working')}
-  // console.log(feelingInput)
-console.log(list[i].feeling)
- }
+}
 }
 
-)
+})
 
   async function resourceDisplay(){
-console.log('triggered')
+
 return fetch(`${window.location.origin}/feeling`)
 .then(res=> res.json())
 .then(list=>{
@@ -83,4 +82,3 @@ function type() {
 
 type();
 
- 
