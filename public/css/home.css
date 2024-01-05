@@ -59,6 +59,12 @@ h3 {
   font-family: 'Roboto','Oxygen-Sans','Ubuntu','Cantarell',"Helvetica Neue",sans-serif;
 
 }
+.card-content{
+  padding-top:3px !important;
+}
+div.card .card-action{
+  padding: 0;
+}
 
 #section2 {
   display: flex;
