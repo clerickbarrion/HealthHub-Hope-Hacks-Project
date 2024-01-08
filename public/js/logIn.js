@@ -46,7 +46,7 @@ class AccountHandler {
         })
     }
     switchSection(currentSwitch,currentSection,nextSwitch,nextSection){
-        nextSwitch.style.backgroundColor = 'navy'
+        nextSwitch.style.backgroundColor = '#0d47a1'
         nextSwitch.style.color = 'white'
         currentSwitch.style.backgroundColor = 'initial'
         currentSwitch.style.color = 'initial'
