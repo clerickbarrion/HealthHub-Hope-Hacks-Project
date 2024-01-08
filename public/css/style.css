@@ -28,7 +28,7 @@ html, body {
   left: 76%;
   border:  solid black;
   box-shadow: rgb(51, 51, 51) 3px 0px 11px, rgb(51, 51, 51) -5px 0px 15px;
-
+  
 }
 #chat-box button {
   width: 100%;
@@ -37,7 +37,7 @@ html, body {
   background-color: #26a69a ;
   color: white;
   cursor: pointer;
-  
+
 }
 #chat-box #chat-container {
   display: none;
@@ -48,15 +48,15 @@ html, body {
 }
 #chat-box #chat-container form {
   display: flex;
-}
+}xs
 #chat-box #chat-container form textarea {
   width: 100%;
 }
 
 .ping {
   font-size: 2rem;
-  background-color: green;
-  color: white;
+  background-color: rgb(243, 33, 33);
+  color: rgb(238, 234, 234);
   margin:auto;
   position: fixed;
   border-radius: 10px;
