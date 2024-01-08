@@ -29,6 +29,9 @@ agreeButton.addEventListener('click', async () => {
   }
   if (!feelingFound) { // if no match is found
     adviceHeader.innerText = 'Please select another feeling';
+    adviceOutput1.innerText = "";
+    adviceOutput2.innerText = "";
+    adviceOutput3.innerText = "";
   }
 });
 

@@ -70,3 +70,46 @@ html, body {
   from {top: -1rem}
   to {top: 1rem}
 }
+
+@keyframes openchat {
+  from {top: 100%}
+  to {top: 8%}
+}
+@keyframes closechat {
+  from {top: 8%}
+  to {top: 100%}
+}
+
+@media (min-width: 801px){
+  #chat-icon {
+    display:none;
+  }
+  #chat-box {
+    animation:none !important;
+  }
+}
+@media (max-width: 800px){
+  #chat-box {
+    display:block;
+    width: 100%;
+    left:0;
+    top:100%;
+    height: fit-content;
+    z-index: 2;
+  }
+  #chat-box button {
+    display:none;
+  }
+  #chat-box #chat-container {
+    display:block;
+  }
+  #chat-box #chat-container #messages{
+    height: 86vh;
+    max-height: 86vh;
+  }
+  #chat-icon{
+    display: block;
+    height: 100%;
+    cursor: pointer;
+  }
+}

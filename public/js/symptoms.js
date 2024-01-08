@@ -5,7 +5,7 @@ let gender = '';
 let birthYear = '';
 
 document.addEventListener('DOMContentLoaded', async function () {
-    const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res=>res.json()).then(token=>token)
+    const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res => res.json()).then(token => token)
     const url = 'https://healthservice.priaid.ch/symptoms?token=' + token + '&format=json&language=en-gb';
     fetch(url)
         .then(res => res.json())
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (storedGender) {
         gender = storedGender;
         document.getElementById('gender').value = gender;
-    } else {gender = document.getElementById('gender').value}
+    } else { gender = document.getElementById('gender').value }
 
     if (storedBirthYear) {
         birthYear = storedBirthYear;
@@ -97,7 +97,7 @@ function removeSymptom(symptomId) {
 
 
 async function getSymptomIdByName() {
-    const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res=>res.json()).then(token=>token)
+    const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res => res.json()).then(token => token)
     const url = 'https://healthservice.priaid.ch/symptoms?token=' + token + '&format=json&language=en-gb';
     return fetch(url).then(res => res.json()).then(symptoms => symptoms);
 }
@@ -118,19 +118,27 @@ const selectedSymptoms = [];
 
 function updateDiagnosesList(diagnoses) {
     const diagnosesList = document.getElementById('Diagnoses');
-
     diagnosesList.innerHTML = '';
 
-    diagnoses.forEach(diagnosis => {
-        const listItem = document.createElement('li');
-        listItem.textContent = 'Diagnoses: ' + diagnosis.Issue.Name + ' Accuracy: ' + diagnosis.Issue.Accuracy + '%';
-        diagnosesList.appendChild(listItem);
-    });
+    if (diagnoses.length > 0) {
+        // Only iterate over the first 3 diagnoses
+        for (let i = 0; i < Math.min(3, diagnoses.length); i++) {
+            const diagnosis = diagnoses[i];
+            const listItem = document.createElement('li');
+            listItem.textContent = 'Diagnoses: ' + diagnosis.Issue.Name + ' Accuracy: ' + diagnosis.Issue.Accuracy + '%';
+            diagnosesList.appendChild(listItem);
+        }
+    } else {
+        // Display a message when no diagnoses are found
+        const messageItem = document.createElement('li');
+        messageItem.textContent = 'No diagnoses found with those symptoms. Please try again.';
+        diagnosesList.appendChild(messageItem);
+    }
 }
 
 async function getDiagnoses() {
     if (selectedSymptoms.length > 0) {
-        const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res=>res.json()).then(token=>token)
+        const token = await fetch(`${window.location.origin}/apimedic/getToken`).then(res => res.json()).then(token => token);
         const diagnosisUrl = 'https://healthservice.priaid.ch/diagnosis?symptoms=[' + selectedSymptoms.join(',') + ']&gender=' + gender + '&year_of_birth=' + birthYear + '&token=' + token + '&format=json&language=en-gb';
 
         fetch(diagnosisUrl)
@@ -146,6 +154,16 @@ async function getDiagnoses() {
             })
             .catch(error => console.error('Error fetching diagnoses:', error));
     } else {
+        // Display a message when no symptoms are selected
+        const diagnosesList = document.getElementById('Diagnoses');
+        diagnosesList.innerHTML = '';
+
+        const messageItem = document.createElement('li');
+        messageItem.textContent = 'No symptoms selected for diagnosis.';
+        diagnosesList.appendChild(messageItem);
+
         console.log('No symptoms selected for diagnosis.');
     }
 }
+
+

@@ -3,3 +3,10 @@ node_modules/
 .vscode
 *.scss
 *.map
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+public/css/*.scss.map
+public/css/*.scss
+public/css/*.*.map
