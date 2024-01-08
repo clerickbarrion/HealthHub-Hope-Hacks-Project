@@ -61,6 +61,24 @@ ol li div button {
   cursor: pointer;
 }
 
+.collapsible-body {
+  max-width: 50vw;
+  max-height: 50vh;
+}
+.collapsible-body #remedy {
+  display: none;
+}
+
+#remedy, #description {
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+@media (max-width: 833px) {
+  .collapsible-body {
+    max-width: none;
+  }
+}
 @media (max-width: 823px) {
   article {
     flex-direction: column;
@@ -68,11 +86,4 @@ ol li div button {
   article section {
     margin: auto;
   }
-}
-.collapsible-body {
-  max-width: 50vw;
-  max-height: 50vh;
-}
-.collapsible-body #remedy {
-  display: none;
 }/*# sourceMappingURL=account.css.map */
