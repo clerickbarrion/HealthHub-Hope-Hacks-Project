@@ -85,3 +85,18 @@ body {
     flex-direction: column;
     background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
 }
+
+@media only screen and (max-width: 773px) {
+    #tips {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #form.remedies {
+        width: 100%; 
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
