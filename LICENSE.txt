@@ -1,0 +1,31 @@
+HealthHub+ Software License Agreement
+
+This Software License Agreement ("Agreement") is entered into by and between HealthHub, hereinafter referred to as "Licensor," and the end user, hereinafter referred to as "Licensee."
+
+Application Name: HealthHub+
+
+Disclaimer: The content provided by HealthHub+ is for general informational purposes and should not be considered as professional medical advice, diagnosis, or therapy. HealthHub+ does not claim to provide licensed medical expertise. For personalized medical guidance, please consult a qualified healthcare practitioner. In emergencies, promptly contact 911 or your regional emergency services.
+
+Overview and Purpose: HealthHub+ aims to provide users with expedient healthcare diagnostics, remedial solutions, and comprehensive health-related resources.
+
+Features: The use of HealthHub+ is subject to the following conditions:
+
+1. **Intuitive Navigation:** A meticulously designed navigation bar graces the apex of each page, facilitating seamless transitions across different sections of the platform.
+
+2. **Interactive ChatBox:** The platform incorporates an interactive chatbox, serving as a real-time conduit for users to engage with healthcare professionals. This chat interface addresses users by their first names and offers a 'whisper' functionality for discreet communication within group chats.
+
+3. **Page Descriptions:**
+   - **Landing Page:** The landing interface provides a succinct overview of HealthHub+. A supplementary navigation tool elucidates the purpose of each page, accompanied by a carousel showcasing testimonials from our satisfied clientele.
+   - **Symptom Checker:** Integrated with the MedicAPI, the symptom checker facilitates diagnostic suggestions based on user-inputted symptoms. Users are guided to input additional specifics for precise diagnostic outcomes. Resources on vaccinations, STD testing, and dental care are also accessible via this interface.
+   - **Remedies:** The Remedies section offers a curated selection of at-home and over-the-counter solutions, backed by comprehensive resources and expert advice.
+   - **Mental Health:** Leveraging our proprietary API, this segment spotlights prevalent emotions triggering therapeutic interventions. Users receive triaged advice tailored to their feelings, along with vital mental health resources.
+
+4. **Login:** The Login portal facilitates user registration and authentication processes. Authenticated users gain access to a comprehensive history of previous diagnostic interactions.
+
+By installing, copying, or otherwise using HealthHub+, Licensee agrees to be bound by the terms and conditions set forth in this Agreement. If Licensee does not agree to these terms and conditions, they must not use the software.
+
+This Agreement is effective as of the date of installation or first use of HealthHub+.
+
+HealthHub
+https://github.com/Leran-Johnson/HealthHub-Hope-Hacks-Project
+1/8/2024

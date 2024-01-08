@@ -35,7 +35,11 @@ function logIn(username,password){
         con.getConnection( (err,connection) =>{
             if (err) throw err
             // select query to see if user and password match
-            let sql = `SELECT * FROM accounts WHERE username = "${username}" AND password = "${password}"`
+            let sql = `
+            SELECT accounts.username, accounts.password, accounts.hex, roles.role
+            FROM accounts
+            LEFT JOIN roles ON accounts.idaccounts = roles.idaccounts
+            WHERE username = '${username}' AND password = '${password}'`
             connection.query(sql, (err, result)=>{
                 if (err) throw err
                 // if none show up one of them is invalid and error is returned
@@ -72,8 +76,53 @@ function resetPassword(username,password,middlename){
     })
 }
 
+function uploadHistory(username,diagnosis,diagnosisID){
+    con.getConnection((err, connection)=>{
+        if (err) throw err
+        let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}"`
+        connection.query(sql, (err, result)=>{
+            sql = `INSERT INTO history (idaccounts, diagnosis, diagnosisID) VALUES (${result[0].idaccounts},"${diagnosis}",${diagnosisID})`
+            connection.query(sql, (err,result)=>{
+                if (err) throw err
+            })
+        })
+    })
+}
+
+function retrieveHistory(username){
+    return new Promise((resolve,reject)=>{
+        con.getConnection((err, connection)=>{
+            if (err) throw err
+            let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}"`
+            connection.query(sql, (err,result)=>{
+                sql = `SELECT DISTINCT diagnosis, diagnosisID FROM history WHERE idaccounts = ${result[0].idaccounts}`
+                connection.query(sql,(err,result)=>{
+                    if (err) throw err
+                    else {resolve(result)}
+                })
+            })
+        })
+    })
+}
+
+function removeDiagnosis(username, diagnosisID){
+    con.getConnection((err,connection)=>{
+        if (err) throw err
+        let sql = `SELECT idaccounts FROM accounts WHERE username = "${username}"`
+        connection.query(sql, (err,result)=>{
+            sql = `DELETE FROM history WHERE idaccounts = ${result[0].idaccounts} AND diagnosisID = ${diagnosisID}`
+            connection.query(sql,(err,result)=>{
+                if (err) throw err
+            })
+        })
+    })
+}
+
 module.exports = {
     signUp,
     logIn,
     resetPassword,
+    uploadHistory,
+    retrieveHistory,
+    removeDiagnosis,
 }

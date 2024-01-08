@@ -2,6 +2,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background: linear-gradient(to bottom, #fafafa, #bbdefb, #fafafa);
 }
 
 main {
@@ -19,6 +20,8 @@ h3 {
   white-space: nowrap;
   font-size: 4em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100px;
+ 
 }
 
 #section1 {
@@ -34,85 +37,91 @@ h3 {
 }
 
 .text-content {
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
   padding: 20px;
 }
 
 #sick-person {
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
 }
 
 #welcome {
-  border: 1px solid black;
   padding: 20px;
   width: 100%;
   color: white;
   font-size: large;
   margin-top: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto','Oxygen-Sans','Ubuntu','Cantarell',"Helvetica Neue",sans-serif;
+
+}
+.card-content{
+  padding-top:3px !important;
+}
+div.card .card-action{
+  padding: 0;
 }
 
 #section2 {
-  border: 1px solid black;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 15px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 #home-nav {
-  text-align: center;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-#home-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.card.blue.darken-4 {
+  height: 100px;
+  width: 400px;
+}
+
+.card.blue.darken-4 .card-content.white-text,
+.card.blue.darken-4 .card-action a {
+  color: white !important;
+}
+
+.card-content.white-text {
+  padding-bottom: 30px;
+}
+
+.card.blue.darken-4 {
+  margin-bottom: 50px;
+}
+
+.card.blue.darken-4 .card-action {
+  padding-top: 10px;
+}
+
+
+.row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-#home-nav li {
-  margin: 10px;
-  border: 2px solid black;
-  padding: 10px;
-  text-align: center;
-  flex: 0 0 calc(50% - 20px);
+.col {
+  flex: 0 0 auto;
+  margin: 0 8px;
+  margin-bottom: 16px;
+}
+
+.card-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-#home-nav .centered {
-  flex-basis: 100%;
-}
-
-#symptoms {
-  background-color: white;;
-}
-
-#remedies {
-  background-color: white;
-}
-
-#mental {
-  background-color: white;
-}
-
-#doctor {
-  background-color: white;
-}
-
-#login {
-  background-color: white;
-}
-
 #explore {
-  color: white;
+  color: black;
 }
 
 #section3 {
@@ -136,4 +145,73 @@ h3 {
 
 #testimonials {
   text-align: center;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  #section1 {
+    flex-direction: column;
+  }
+
+  .text-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #sick-person {
+    display: block;
+    margin-top: 20px;
+  }
+
+  #typewriter {
+    font-size: 4em;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #section2 .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+  
+
+@media screen and (max-width: 767px) {
+  #sick-person {
+    display: none;
+  }
+
+  .text-content {
+    max-width: 100%;
+  }
+
+  #section2 .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section2 .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .row {
+      flex-direction: column;
+  }
+
+  .col.l4.offset-l2.s12 {
+      max-width: 100%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+  }
 }

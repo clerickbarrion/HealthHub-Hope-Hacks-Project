@@ -28,29 +28,84 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const input = chatBox.querySelector('textarea')
     const messages = chatBox.querySelector('#messages')
     const typing = chatBox.querySelector('small')
+    const chatIcon = document.getElementById('chat-icon')
     let time
     
     openChatBtn.addEventListener('click', ()=>{
         if (chatContainer.style.display === 'none'){
             chatContainer.style.display = 'block'
             socket.emit('join')
-        }else{
+        }else if (chatContainer.style.display === 'block'){
             chatContainer.style.display = 'none'
             socket.emit('leave')
+        } else {
+            chatContainer.style.display = 'block'
+            socket.emit('join')
+        }
+    })
+
+    chatIcon.addEventListener('click', ()=>{
+        if (chatBox.style.animation === '2s ease 0s 1 normal forwards running openchat;'){
+            chatBox.style.animation = 'close'
+            socket.emit('join')
+        }else if (chatBox.style.animation === '2s ease 0s 1 normal forwards running openchat'){
+            chatBox.style.animation = 'closechat 2s forwards'
+            socket.emit('leave')
+        } else {
+            console.log(chatBox.style.animation)
+            chatBox.style.animation = 'openchat 2s forwards'
+            socket.emit('join')
         }
     })
 
     input.addEventListener('keydown', e=>{
         if (e.key === 'Enter' && input.value ){ 
-            socket.emit('chat message',input.value)
-            input.value= ''
+            
+            if (input.value.includes('@')){
+                let user = ''
+                for (let i = input.value.indexOf('@')+1; i< input.value.indexOf(' ', input.value.indexOf('@')); i++){
+                    user += input.value[i]
+                }
+                socket.emit('ping', {
+                    sender: localStorage.getItem('username'), 
+                    receiver: user, 
+                    msg: input.value,
+                    role: localStorage.getItem('role')
+                })
+                socket.emit('chat message',input.value)
+                input.value= ''
+            }else if (input.value.includes('/w')) {
+                let user = ''
+                for (let i = input.value.indexOf('/w')+3; i< input.value.indexOf(' ', input.value.indexOf('/w')+3); i++){
+                    user += input.value[i]
+                }
+                socket.emit('whisper', {
+                    sender: localStorage.getItem('username'), 
+                    receiver: user, 
+                    msg: input.value.replace(`/w ${user}`,''),
+                    role: localStorage.getItem('role')
+                })
+                const p = document.createElement('p')
+                p.innerHTML = `To ${user}: ${input.value.replace(`/w ${user}`,'')}`
+                p.style.color = 'blue'
+                messages.appendChild(p)
+                messages.scrollTop += 1000
+                input.value = `/w ${user} `
+            } else { 
+                socket.emit('chat message',input.value)
+                input.value= '' 
+            }
             input.blur()
         }
     })
 
     input.addEventListener('input', () => socket.emit('typing'))
 
-    socket.emit('get user', localStorage.getItem('username'))
+    socket.emit('get user', {
+        name: localStorage.getItem('username'),
+        hex: localStorage.getItem('hex'),
+        role: localStorage.getItem('role')
+    })
 
     socket.on('typing', typers=>{
         switch(typers.length){
@@ -70,7 +125,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     socket.on('chat message', msg=>{
         const p = document.createElement('p')
         p.innerHTML = msg
-        p.querySelector('mark').style.color = '#'+localStorage.getItem('hex')
         p.querySelector('mark').style.backgroundColor = 'initial'
         messages.appendChild(p)
         messages.scrollTop += 1000
@@ -78,7 +132,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     socket.on('join', msg=>{
         const p = document.createElement('p')
         p.innerHTML = msg
-        p.querySelector('mark').style.color = '#'+localStorage.getItem('hex')
         p.querySelector('mark').style.backgroundColor = 'initial'
         p.style.color = 'green'
         messages.appendChild(p)
@@ -87,10 +140,31 @@ document.addEventListener('DOMContentLoaded', ()=>{
     socket.on('leave', msg=>{
         const p = document.createElement('p')
         p.innerHTML = msg
-        p.querySelector('mark').style.color = '#'+localStorage.getItem('hex')
         p.querySelector('mark').style.backgroundColor = 'initial'
         p.style.color = 'red'
         messages.appendChild(p)
         messages.scrollTop += 1000
+    })
+    socket.on('ping',ping=>{
+        if (ping.receiver.toUpperCase() === localStorage.getItem('username').toUpperCase()){
+            let role
+            ping.role === 'doctor' ? role = 'Doctor ' : role = ''
+            const h1 = document.createElement('h1')
+            h1.textContent = `${role}${ping.sender} pinged you: ${ping.msg}`.replace(`@${ping.receiver}`,'')
+            h1.classList = 'ping'
+            document.querySelector('body').appendChild(h1)
+            setTimeout(()=>{h1.remove()},3000)
+        }
+    })
+    socket.on('whisper',whisper=>{
+        if (whisper.receiver.toUpperCase() === localStorage.getItem('username').toUpperCase()){
+            let role 
+            whisper.role === 'doctor' ? role = 'Doctor ' : role = ''
+            const p = document.createElement('p')
+            p.innerHTML = `From ${role}${whisper.sender}: ${whisper.msg}`
+            p.style.color = 'blue'
+            messages.appendChild(p)
+            messages.scrollTop += 1000
+        }
     })
 })

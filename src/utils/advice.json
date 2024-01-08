@@ -1,0 +1,230 @@
+ 
+
+    [{
+        "feeling":"Fearful",
+           "advice1":"Identify Triggers: Understand specific situations or thoughts that evoke fear.",
+           "advice2": "Gradual Exposure: Work on facing fears gradually in a controlled manner.",
+           "advice3":"Mindfulness Techniques: Practice techniques to stay present and manage anxious thoughts."
+          },
+  
+          {"feeling":"Shameful",
+          "advice1":"Challenge Negative Beliefs: Identify and challenge negative self-perceptions.",
+          "advice2": "Self-Compassion: Cultivate self-compassion and forgiveness.",
+          "advice3":"Share Vulnerabilities: Open up to trusted individuals to reduce feelings of isolation."
+           },
+           {
+            "feeling":"Isolated",
+            "advice1":"Seek Social Connections: Actively engage in social activities or join groups.",
+            "advice2": "Communicate Openly: Share feelings of isolation with friends or family.",
+            "advice3":"Explore Interests: Pursue activities that genuinely interest and connect you with others."
+           },
+           {
+            "feeling":"Perfectionist",
+            "advice1":"Set Realistic Goals: Establish achievable goals and expectations.",
+            "advice2": "Embrace Mistakes: Learn to accept and learn from mistakes.",
+            "advice3":"Celebrate Achievements: Acknowledge and celebrate both small and large accomplishments."
+          },
+         {
+            "feeling":"Regretful",
+            "advice1":"Learn from Experiences: Focus on learning and growth from past experiences.",
+            "advice2": "Practice Self-Forgiveness: Forgive yourself for mistakes and shortcomings.",
+            "advice3":"Set Future Intentions: Shift focus towards making positive choices moving forward."
+          },
+           {
+            "feeling":"Insecure",
+            "advice1":"Challenge Negative Self-Beliefs: Identify and challenge negative thoughts about yourself.",
+            "advice2": "Build Confidence: Focus on strengths and positive qualities.",
+            "advice3":"Positive Experiences: Engage in activities that boost self-esteem and confidence."
+          },
+          {
+            "feeling":"Jealous",
+            "advice1":"Identify Triggers: Understand what triggers feelings of jealousy.",
+            "advice2": "Open Communication: Discuss insecurities and concerns with your partner.",
+            "advice3":"Build Trust: Work collaboratively on building and maintaining trust in relationships."
+          },
+         { 
+            "feeling":"Apathetic",
+         "advice1":"Set Goals: Establish small, achievable goals to create a sense of purpose.",
+         "advice2": "Identify Interests: Explore activities that bring joy and interest.",
+         "advice3":"Seek Support: Talk to friends, family, or a therapist about underlying causes."
+         },
+         {
+            "feeling":"Hopeless",
+            "advice1":"Break Down Problems: Divide large problems into smaller, manageable steps.",
+            "advice2": "Focus on Achievements: Celebrate small successes and accomplishments.",
+            "advice3":"Seek Professional Help: Consider therapy for additional support and guidance. "
+         },
+         {
+            "feeling":"Overwhelmed",
+            "advice1":"Prioritize Tasks: Identify and prioritize tasks based on importance.",
+            "advice2": "Delegate Responsibilities: Seek help and delegate tasks when possible.",
+            "advice3":"Self-Care: Take breaks, practice relaxation, and engage in self-care activities."
+        },
+        { 
+           "feeling":"Confused",
+        "advice1":"Self-Reflection: Take time for introspection to clarify thoughts and feelings.",
+        "advice2": "Seek Guidance: Consult with trusted individuals or a therapist for clarity.",
+        "advice3":"Break Down Complexities: Break complex issues into simpler components for better understanding."
+        },
+        {
+           "feeling":"Resentfult",
+           "advice1":"Express Feelings: Communicate openly about feelings of resentment.",
+           "advice2": "Set Boundaries: Establish clear boundaries to prevent further resentment.",
+           "advice3":"Forgiveness: Work towards forgiveness for personal well-being."
+        },
+        {
+           "feeling":"Imposter Syndrome",
+           "advice1":"Acknowledge Achievements: Recognize and internalize your accomplishments.",
+           "advice2": "Positive Affirmations: Use positive self-talk to counteract self-doubt.",
+           "advice3":"Seek Validation Internally: Find validation from your own values and standards."},
+           { 
+              "feeling":"Restless",
+           "advice1":"Mindful Activities: Engage in activities that promote mindfulness and presence.",
+           "advice2": "Explore Interests: Pursue hobbies or activities that capture your attention.",
+           "advice3":"Physical Exercise: Incorporate regular physical activity to release pent-up energy."
+           },
+           {
+              "feeling":"Numb",
+              "advice1":"Express Emotions Safely: Explore and express emotions through art or therapy.",
+              "advice2": "Seek Professional Help: Consult a therapist for guidance, especially after trauma.",
+              "advice3":"Reconnect with Passions: Rediscover activities that once brought joy and meaning."
+           },
+           {
+              "feeling":"Inferior",
+              "advice1":"Positive Self-Talk: Challenge and replace negative thoughts with positive affirmations.",
+              "advice2": "Focus on Growth: Embrace a mindset of continuous self-improvement.",
+              "advice3":"Celebrate Achievements: Recognize and celebrate personal accomplishments."},
+              { 
+                 "feeling":"Indecisisive",
+              "advice1":"Weigh Pros and Cons: Systematically evaluate the pros and cons of options.",
+              "advice2": "Set Priorities: Identify and prioritize factors influencing the decision.",
+              "advice3":"Trust Intuition: Develop trust in your instincts and intuition."
+              },
+              {
+                 "feeling":"Unmotivated",
+                 "advice1":"Set S.M.A.R.T. Goals: Establish specific, measurable, achievable, relevant, and time-bound goals.",
+                 "advice2": "Create a Routine: Implement a structured routine to maintain consistency.",
+                 "advice3":"Visualize Success: Picture the positive outcomes of completing tasks for motivation."
+              },
+              {
+                 "feeling":"Stuck",
+                 "advice1":"Explore Perspectives: Consider different perspectives on the situation.",
+                 "advice2": "Set Realistic Goals: Break down larger goals into smaller, manageable steps.",
+                 "advice3":"Embrace Change: Accept and embrace the possibility of change."},
+                 {
+                    "feeling":"Unworthy",
+                    "advice1":"Positive Affirmations: Counteract feelings of unworthiness with positive affirmations.",
+                    "advice2": "Seek Validation: Surround yourself with supportive and affirming individuals.",
+                    "advice3":"Therapy for Self-Exploration: Use therapy to explore underlying causes and build self-worth."
+                 },
+                 {
+                    "feeling":"Disconnected",
+                    "advice1":"Reconnect with Values: Align activities with personal values to feel more connected.",
+                    "advice2": "Express Emotions: Openly share emotions with trusted individuals.",
+                    "advice3":"Build Empathetic Connections: Foster relationships with those who understand and support."},
+                    {
+                       "feeling":"Overthinking",
+                       "advice1":"Mindfulness Practices: Engage in mindfulness meditation to reduce overthinking.",
+                       "advice2": "Set Time Limits: Allocate specific time for decision-making or problem-solving.",
+                       "advice3":"Challenge Catastrophic Thoughts: Question the validity of extreme or catastrophic thoughts."
+                    },
+                    {
+                       "feeling":"Trapped",
+                       "advice1":"Explore Options: Identify potential alternatives or options.",
+                       "advice2": "Take Small Steps: Gradually implement changes to avoid feeling overwhelmed.",
+                       "advice3":"Seek Professional Guidance: Consult with a therapist for objective support."},
+                       {
+                          "feeling":"People-Pleasing",
+                          "advice1":"Establish Boundaries: Learn to set and communicate healthy boundaries.",
+                          "advice2": "Prioritize Self-Care: Focus on your own needs and well-being.",
+                          "advice3":"Self-Validation: Develop self-validation rather than relying solely on external approval."
+                       },
+                       {
+                          "feeling":"Unseen",
+                          "advice1":"Express Needs Clearly: Clearly communicate your feelings and needs.",
+                          "advice2": "Seek Understanding: Encourage open and empathetic communication with others.",
+                          "advice3":"Build Empathetic Connections: Surround yourself with individuals who strive to understand and support you."
+                     },
+                          {
+                             "feeling":"Unfulfilled",
+                             "advice1":"Identify Passions: Explore and identify activities or pursuits that bring fulfillment.",
+                             "advice2": "Set Meaningful Goals: Establish goals aligned with personal values and aspirations.",
+                             "advice3":"Regular Self-Reflection: Continuously evaluate and adjust goals for ongoing fulfillment."},
+                             {
+                                "feeling":"Impatient",
+                                "advice1":"Mindfulness Practices: Engage in mindfulness to cultivate patience.",
+                                "advice2": "Set Realistic Timelines: Establish achievable timelines for goals and projects.",
+                                "advice3":"Appreciate the Process: Focus on and appreciate the journey rather than solely the end result."
+                             },
+                             {
+                                "feeling":"Sad",
+                                "advice1":"Break Down Problems: Divide large problems into smaller, manageable steps.",
+                                "advice2": "Focus on Achievements: Celebrate small successes and accomplishments.",
+                                "advice3":"Seek Professional Help: Consider therapy for additional support and guidance. "
+                              },
+                              {
+                                 "feeling":"Angry",
+                                 "advice1":"Identify Triggers: Recognize and monitor triggers for mood swings.",
+                                 "advice2": "Emotional Regulation Techniques: Learn and practice techniques for emotional regulation.",
+                                 "advice3":"Seek Professional Support: Consult with a mental health professional for guidance."
+                               },
+                               {
+                                  "feeling":"Hurt",
+                                  "advice1":"Break Down Problems: Divide large problems into smaller, manageable steps.",
+                                  "advice2": "Focus on Achievements: Celebrate small successes and accomplishments.",
+                                  "advice3":"Seek Professional Help: Consider therapy for additional support and guidance. "
+                                },
+                                {
+                                   "feeling":"Dissappointed",
+                                   "advice1":"Self-Reflection: Take time for introspection to clarify thoughts and feelings.",
+                                   "advice2": "Seek Guidance: Consult with trusted individuals or a therapist for clarity.",
+                                   "advice3":"Break Down Complexities: Break complex issues into simpler components for better understanding."
+                                 },
+                                 {
+                                    "feeling":"Manic",
+                                    "advice1":"Prioritize Tasks: Identify and prioritize tasks based on importance.",
+                                    "advice2": "Delegate Responsibilities: Seek help and delegate tasks when possible.",
+                                    "advice3":"Self-Care: Take breaks, practice relaxation, and engage in self-care activities."
+                                  },
+                                  {
+                                     "feeling":"Unloved",
+                                     "advice1":"Identify Passions: Explore and identify activities or pursuits that bring fulfillment.",
+                             "advice2": "Set Meaningful Goals: Establish goals aligned with personal values and aspirations.",
+                             "advice3":"Regular Self-Reflection: Continuously evaluate and adjust goals for ongoing fulfillment."
+                                   },
+                                   {
+                                      "feeling":"Alone",
+                                      "advice1":"Identify Passions: Explore and identify activities or pursuits that bring fulfillment.",
+                              "advice2": "Set Meaningful Goals: Establish goals aligned with personal values and aspirations.",
+                              "advice3":"Regular Self-Reflection: Continuously evaluate and adjust goals for ongoing fulfillment."
+                                    },
+                                    {
+                                       "feeling":"Frustrated",
+                                       "advice1":"Explore Options: Identify potential alternatives or options.",
+                       "advice2": "Take Small Steps: Gradually implement changes to avoid feeling overwhelmed.",
+                       "advice3":"Seek Professional Guidance: Consult with a therapist for objective support."
+                                     },
+                                     {
+                                        "feeling":"Depressed",
+                                        "advice1":"Explore Options: Identify potential alternatives or options.",
+                        "advice2": "Take Small Steps: Gradually implement changes to avoid feeling overwhelmed.",
+                        "advice3":"Seek Professional Guidance: Consult with a therapist for objective support."
+                                      },
+  
+                                      {"feeling":"Guilty",
+                                      "advice1":"Challenge Negative Beliefs: Identify and challenge negative self-perceptions.",
+                                      "advice2": "Self-Compassion: Cultivate self-compassion and forgiveness.",
+                                      "advice3":"Share Vulnerabilities: Open up to trusted individuals to reduce feelings of isolation."
+                                       },
+                                       { 
+                                          "feeling":"Manic",
+                                       "advice1":"Mindful Activities: Engage in activities that promote mindfulness and presence.",
+                                       "advice2": "Explore Interests: Pursue hobbies or activities that capture your attention.",
+                                       "advice3":"Physical Exercise: Incorporate regular physical activity to release pent-up energy."
+                                       }
+                              
+                                    
+       ]
+      
+          
+          
