@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const input = chatBox.querySelector('textarea')
     const messages = chatBox.querySelector('#messages')
     const typing = chatBox.querySelector('small')
+    const chatIcon = document.getElementById('chat-icon')
     let time
     
     openChatBtn.addEventListener('click', ()=>{
@@ -39,6 +40,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
             socket.emit('leave')
         } else {
             chatContainer.style.display = 'block'
+            socket.emit('join')
+        }
+    })
+
+    chatIcon.addEventListener('click', ()=>{
+        if (chatBox.style.animation === '2s ease 0s 1 normal forwards running openchat;'){
+            chatBox.style.animation = 'close'
+            socket.emit('join')
+        }else if (chatBox.style.animation === '2s ease 0s 1 normal forwards running openchat'){
+            chatBox.style.animation = 'closechat 2s forwards'
+            socket.emit('leave')
+        } else {
+            console.log(chatBox.style.animation)
+            chatBox.style.animation = 'openchat 2s forwards'
             socket.emit('join')
         }
     })
