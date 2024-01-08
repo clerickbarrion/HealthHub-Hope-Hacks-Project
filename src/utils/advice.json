@@ -157,13 +157,73 @@
                                 "advice3":"Appreciate the Process: Focus on and appreciate the journey rather than solely the end result."
                              },
                              {
-                                "feeling":"Moody",
-                                "advice1":"Identify Triggers: Recognize and monitor triggers for mood swings.",
-                                "advice2": "Emotional Regulation Techniques: Learn and practice techniques for emotional regulation.",
-                                "advice3":"Seek Professional Support: Consult with a mental health professional for guidance."
-                              }
+                                "feeling":"Sad",
+                                "advice1":"Break Down Problems: Divide large problems into smaller, manageable steps.",
+                                "advice2": "Focus on Achievements: Celebrate small successes and accomplishments.",
+                                "advice3":"Seek Professional Help: Consider therapy for additional support and guidance. "
+                              },
+                              {
+                                 "feeling":"Angry",
+                                 "advice1":"Identify Triggers: Recognize and monitor triggers for mood swings.",
+                                 "advice2": "Emotional Regulation Techniques: Learn and practice techniques for emotional regulation.",
+                                 "advice3":"Seek Professional Support: Consult with a mental health professional for guidance."
+                               },
+                               {
+                                  "feeling":"Hurt",
+                                  "advice1":"Break Down Problems: Divide large problems into smaller, manageable steps.",
+                                  "advice2": "Focus on Achievements: Celebrate small successes and accomplishments.",
+                                  "advice3":"Seek Professional Help: Consider therapy for additional support and guidance. "
+                                },
+                                {
+                                   "feeling":"Dissappointed",
+                                   "advice1":"Self-Reflection: Take time for introspection to clarify thoughts and feelings.",
+                                   "advice2": "Seek Guidance: Consult with trusted individuals or a therapist for clarity.",
+                                   "advice3":"Break Down Complexities: Break complex issues into simpler components for better understanding."
+                                 },
+                                 {
+                                    "feeling":"Manic",
+                                    "advice1":"Prioritize Tasks: Identify and prioritize tasks based on importance.",
+                                    "advice2": "Delegate Responsibilities: Seek help and delegate tasks when possible.",
+                                    "advice3":"Self-Care: Take breaks, practice relaxation, and engage in self-care activities."
+                                  },
+                                  {
+                                     "feeling":"Unloved",
+                                     "advice1":"Identify Passions: Explore and identify activities or pursuits that bring fulfillment.",
+                             "advice2": "Set Meaningful Goals: Establish goals aligned with personal values and aspirations.",
+                             "advice3":"Regular Self-Reflection: Continuously evaluate and adjust goals for ongoing fulfillment."
+                                   },
+                                   {
+                                      "feeling":"Alone",
+                                      "advice1":"Identify Passions: Explore and identify activities or pursuits that bring fulfillment.",
+                              "advice2": "Set Meaningful Goals: Establish goals aligned with personal values and aspirations.",
+                              "advice3":"Regular Self-Reflection: Continuously evaluate and adjust goals for ongoing fulfillment."
+                                    },
+                                    {
+                                       "feeling":"Frustrated",
+                                       "advice1":"Explore Options: Identify potential alternatives or options.",
+                       "advice2": "Take Small Steps: Gradually implement changes to avoid feeling overwhelmed.",
+                       "advice3":"Seek Professional Guidance: Consult with a therapist for objective support."
+                                     },
+                                     {
+                                        "feeling":"Depressed",
+                                        "advice1":"Explore Options: Identify potential alternatives or options.",
+                        "advice2": "Take Small Steps: Gradually implement changes to avoid feeling overwhelmed.",
+                        "advice3":"Seek Professional Guidance: Consult with a therapist for objective support."
+                                      },
+  
+                                      {"feeling":"Guilty",
+                                      "advice1":"Challenge Negative Beliefs: Identify and challenge negative self-perceptions.",
+                                      "advice2": "Self-Compassion: Cultivate self-compassion and forgiveness.",
+                                      "advice3":"Share Vulnerabilities: Open up to trusted individuals to reduce feelings of isolation."
+                                       },
+                                       { 
+                                          "feeling":"Manic",
+                                       "advice1":"Mindful Activities: Engage in activities that promote mindfulness and presence.",
+                                       "advice2": "Explore Interests: Pursue hobbies or activities that capture your attention.",
+                                       "advice3":"Physical Exercise: Incorporate regular physical activity to release pent-up energy."
+                                       }
                               
-      
+                                    
        ]
       
           
