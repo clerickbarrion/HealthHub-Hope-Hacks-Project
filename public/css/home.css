@@ -147,14 +147,26 @@ div.card .card-action{
   text-align: center;
 }
 
-@media screen and (max-width: 1200px) {
-  .content {
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  #section1 {
     flex-direction: column;
   }
 
-  .text-content, #sick-person {
-    max-width: 100%;
-    padding: 10px;
+  .text-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #sick-person {
+    display: block;
+    margin-top: 20px;
+  }
+
+  #typewriter {
+    font-size: 4em;
+    margin-top: 20px;
+    text-align: left;
   }
   
   #section2 .row {
