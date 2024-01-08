@@ -22,6 +22,7 @@
             <li><a href="doctor.html">Find a Doctor</a></li>
             <li><a href="logIn.html"  class="waves-effect waves-light btn">Log In</a></li>
           </ul>
+          <img id="chat-icon" class="right" src="../imgs/chaticon.png">
         </div>
     </nav>
     
@@ -61,8 +62,27 @@
         <button class="center-align waves-light btn modal-trigger blue darken-4" id="submit-diagnosis" >Find Remedies</button>
  </div>
       </div>
-        <section id="popup" class="center-align">
-          <div id="desc-wrap" class="card blue darken-4">
+        <section id="popup" class="card">
+          <div class="card-image">
+            <img src="../imgs/medicine.png">
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs">
+              <li class="tab"><a class="active white-text blue darken-4" href="#description">Description</a></li>
+              <li class="tab"><a class="white-text blue darken-4" href="#recommended">Remedies</a></li>
+              <li class="tab"><a class="white-text blue darken-4" href="#alternative">Alternative Treatment</a></li>
+            </ul>
+          </div>
+          <div class="card-content white">
+            <p id="description" class="white"></p>
+            <p id="recommended" class="white"></p>
+            <div id="alternative" class="white">
+              <p id="alternative-text"></p>
+              <a href="#">Learn More</a>
+            </div>
+            
+          </div>
+          <!-- <div id="desc-wrap" class="card blue darken-4">
             <h4 class="white-text">Description</h4>
              
             <p id="description" class="card-content white"></p>
@@ -79,7 +99,7 @@
              
             <p id="alternative" class="card-content white"></p>
            
-          </div>
+          </div> -->
         </section>
 
 

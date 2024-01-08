@@ -56,18 +56,30 @@ ol{
     }
 }
 
+.collapsible-body{
+    max-width: 50vw; 
+    max-height:50vh;
+    #remedy{
+        display:none;
+    }
+}
+
+#remedy,#description {
+    max-height: 50vh;
+    overflow:scroll;
+}
+
+@media (max-width:833px){
+    .collapsible-body{
+        max-width: none;
+    }
+}
+
 @media (max-width: 823px){
     article{
         flex-direction: column;
         section{
             margin: auto;
         }
-    }
-}
-.collapsible-body{
-    max-width: 50vw; 
-    max-height:50vh;
-    #remedy{
-        display:none;
     }
 }

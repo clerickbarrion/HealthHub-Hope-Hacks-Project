@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems);
-
+    M.Carousel.init(elems);
+    M.Tabs.init(document.querySelector('.tabs'), {});
 });
 
 fetch(`${window.location.origin}/apimedic/getDiagnosisList`)
@@ -15,12 +15,10 @@ fetch(`${window.location.origin}/apimedic/getDiagnosisList`)
     })
 })
 
-
-
 const findRemediesBtn = document.getElementById('submit-diagnosis')
 const diagnosis = document.getElementById('diagnosis')
 const recommended = document.getElementById('recommended')
-const alternative = document.getElementById('alternative')
+const alternative = document.getElementById('alternative-text')
 const description = document.getElementById('description')
 const popup = document.getElementById('popup')
 const storedDiagnosis = localStorage.getItem('firstDiagnosis')
@@ -28,6 +26,8 @@ const storedDiagnosis = localStorage.getItem('firstDiagnosis')
 if (storedDiagnosis) { diagnosis.value = JSON.parse(storedDiagnosis).Issue.Name }
 
 findRemediesBtn.addEventListener('click', async ()=>{
+    location.href = "#";
+    location.href = "#popup";
     if(diagnosis.value){
         popup.style.display = 'flex'
         recommended.innerHTML = `<div class="preloader-wrapper big active"><div class="spinner-layer spinner-red-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>`
@@ -50,8 +50,14 @@ findRemediesBtn.addEventListener('click', async ()=>{
         const alt = await fetch(`${window.location.origin}/api/homecare?search=${diagnosis.value}`).then(res=>res.json()).then(issue=>issue)
         recommended.textContent = remedy
         alternative.textContent = alt.homeCare || alt.error
-        if (alt.source) document.getElementById('alt-wrap').querySelector('a').href = alt.source
+
+        if (alt.source) document.getElementById('alternative').querySelector('a').href = alt.source
+        else {document.getElementById('alternative').querySelector('a').href = '#'}
+
+        if (alt.img) document.querySelector('.card-image').querySelector('img').src = alt.img
+        else {document.querySelector('.card-image').querySelector('img').src = '../imgs/medicine.png'}
         localStorage.setItem('firstDiagnosis', '')
+
         if (localStorage.getItem('username')){
             const data = {
                 username: localStorage.getItem('username'),
