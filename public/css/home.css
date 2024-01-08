@@ -203,3 +203,15 @@ div.card .card-action{
     margin-bottom: 20px;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .row {
+      flex-direction: column;
+  }
+
+  .col.l4.offset-l2.s12 {
+      max-width: 100%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+  }
+}
